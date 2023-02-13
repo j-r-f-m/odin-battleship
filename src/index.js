@@ -1,3 +1,9 @@
-import "./styles.css";
+//import "./styles.css";
 
-console.log("hello worlsd");
+console.log("hello worl222sd");
+
+const initTest = () => {
+  return "hi";
+};
+
+export { initTest };

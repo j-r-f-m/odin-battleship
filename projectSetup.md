@@ -31,7 +31,7 @@ install webpack:
 1. initialize: npm init @eslint/config
    - answer questions
 2. create .eslintignore: touch .eslintignore - check last project
-3. install prettier (i dont think i need to do this if the plugin is installed)
+3. install pretnptier (i dont think i need to do this if the plugin is installed)
    - npm install --save-dev --save-exact prettier
 4. format all files
    - npx prettier --write .
@@ -48,3 +48,4 @@ npm install --save-dev jest
 npm i -D @babel/preset-env
 Create a .babelrc file: touch .babelrc
 .babelrc: { "presets": ["@babel/preset-env"] }
+add script to package.json: "test": "jest"
