@@ -1,9 +1,6 @@
-//import "./styles.css";
+import "./styles.css";
+import { shipFact } from "./ships.js";
 
-console.log("hello worl222sd");
+// console.log("hello worl22asdas2sd");
 
-const initTest = () => {
-  return "hi";
-};
-
-export { initTest };
+export {};
