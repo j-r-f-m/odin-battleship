@@ -1,24 +1,32 @@
+/**
+ * create a ship and pass its length
+ * @param {integer} length of ship
+ */
 function Ship(length) {
   this.length = length;
-  this.sunk = false;
-  this.hits = 0;
+  this.isSunk = false;
+  this.hitCount = 0;
 }
 
+/**
+ * increase hitcount
+ */
 Ship.prototype.hit = function () {
-  this.hits = this.hits + 1;
+  this.hitCount = this.hitCount + 1;
 };
 
-Ship.prototype.isSunk = function () {
-  if (this.hits >= this.length) {
-    this.sunk = true;
+/**
+ * checks if boat has sunk
+ */
+Ship.prototype.sunk = function () {
+  if (this.hitCount >= this.length) {
+    this.isSunk = true;
   }
 };
 
 // ---------------- TEST ----------------------
-const testShip = new Ship(3, false);
-console.log(testShip);
-testShip.hit();
-testShip.hit();
-console.log(testShip);
+
+let testArr = [];
+console.log(testArr[0]);
 
 export { Ship };
