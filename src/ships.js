@@ -1,11 +1,18 @@
+import { Gameboard } from "./gameboard";
+
+// Exporting the constructor function did not export the pbject methods need some fix
+
 /**
  * create a ship and pass its length
  * @param {integer} length of ship
  */
-function Ship(length) {
+function Ship(length, name) {
   this.length = length;
   this.isSunk = false;
   this.hitCount = 0;
+  this.direction = "inX";
+  this.coordinates = null;
+  this.name = name;
 }
 
 /**
@@ -26,7 +33,11 @@ Ship.prototype.sunk = function () {
 
 // ---------------- TEST ----------------------
 
-let testArr = [];
-console.log(testArr[0]);
+// let testShip = new Ship(2);
+// console.log(testShip.hit);
+
+// let testGameboard = new Gameboard();
+// let test = testGameboard.calculate([1, 3], 2);
+// console.log(test);
 
 export { Ship };
