@@ -1,20 +1,26 @@
 import { crtNode } from "./domHelper";
+import screenPlacing from "./screenPlacing";
+import Gameboard from "./gameboard";
 
-const startScreen = () => {
+/**
+ * create starting screen
+ */
+const screenStart = () => {
   // create content container
   const contentContainer = crtNode("#body", "div", "content");
   // create header
   crtNode(".content", "div", "header", "Battleship");
   // player board
-  crtNode(".content", "div", "player-board", "Player vs. A.I.");
+  crtNode(".content", "div", "adversaries", "Player vs. A.I.");
   // create button
   const startBtn = crtNode(".content", "button", "btn-start", "Start Game");
+
   startBtn.addEventListener("click", () => {
     // delete start screen
     contentContainer.remove();
     // create placing screen
-    console.log("start button");
+    screenPlacing();
   });
 };
 
-export default startScreen;
+export default screenStart;

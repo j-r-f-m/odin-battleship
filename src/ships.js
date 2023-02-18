@@ -6,7 +6,7 @@ import { Gameboard } from "./gameboard";
  * create a ship and pass its length
  * @param {integer} length of ship
  */
-export function Ship(length, name) {
+function Ship(length, name) {
   this.length = length;
   this.isSunk = false;
   this.hitCount = 0;
@@ -23,8 +23,8 @@ export function Ship(length, name) {
     }
   };
 }
-
-/** ------------- I COULD NOT MAKE DEFINING FUNTIONS ON PROTOTYPE WORK -------*/
+export default Ship;
+/** ------------- I COULD NOT MAKE DEFINING FUNCTIONS ON PROTOTYPE WORK -------*/
 
 // /**
 //  * increase hitcount

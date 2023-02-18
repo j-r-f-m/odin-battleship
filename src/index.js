@@ -1,6 +1,14 @@
 import "./styles.css";
-import startScreen from "./startScreen";
+import screenStart from "./screenStart";
+import screenPlacing from "./screenPlacing";
+import Gameboard from "./gameboard";
 
-startScreen();
+// --------------------- initilize objects --------------------------
+// create gameboard for player
+const playerBoard = new Gameboard();
 
-export {};
+//screenStart();
+screenPlacing();
+// create ship objects for placement
+
+export { playerBoard };

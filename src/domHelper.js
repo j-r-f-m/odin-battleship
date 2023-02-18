@@ -9,7 +9,6 @@
 const crtNode = (parent, typeOfEle, nameClass, txt) => {
   // select parent
   const parentEle = document.querySelector(parent);
-  console.log(parentEle);
   // create element
   const crtEle = document.createElement(typeOfEle);
   crtEle.className = nameClass;

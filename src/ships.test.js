@@ -1,4 +1,4 @@
-import { Ship } from "./ships";
+import Ship from "./ships";
 
 // if the state of an object changes, tests that passed before the change might
 // not pass after the change

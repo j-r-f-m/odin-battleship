@@ -1,4 +1,4 @@
-import { Ship } from "./ships";
+import Ship from "./ships";
 
 function Gameboard() {
   /** ----------------------------Properties ----------------------------- */
@@ -11,7 +11,8 @@ function Gameboard() {
     { name: "Battleship", length: 4, direction: "inX" },
     { name: "Carrier", length: 5, direction: "inX" },
   ];
-
+  // owner of board
+  this.owner = "null";
   // placed ships
   this.placedShips = [];
   // default placing direction
@@ -277,19 +278,19 @@ function Gameboard() {
 //   return this.placedShips;
 // };
 
-let board = new Gameboard();
-board.placeShips([2, 2]);
-board.placeShips([2, 4]);
-board.placeShips([2, 6]);
-board.placeShips([2, 8]);
-board.placeShips([2, 10]);
+// let board = new Gameboard();
+// board.placeShips([2, 2]);
+// board.placeShips([2, 4]);
+// board.placeShips([2, 6]);
+// board.placeShips([2, 8]);
+// board.placeShips([2, 10]);
 
-board.receiveAttack([2, 2]);
-board.receiveAttack([3, 2]);
-console.log(board.shotsMissed);
-console.log(board.shotsHit);
+// board.receiveAttack([2, 2]);
+// board.receiveAttack([3, 2]);
+// console.log(board.shotsMissed);
+// console.log(board.shotsHit);
 
-console.log(board);
-// console.log("asdfassadfasdf");
+// console.log(board);
+// // console.log("asdfassadfasdf");
 
-export { Gameboard };
+export default Gameboard;
