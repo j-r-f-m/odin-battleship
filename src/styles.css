@@ -127,3 +127,45 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* -------------------------------------------------------------------------- */
+
+/* ---------------------------- layout -------------------------------------- */
+.content {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, [col-start]1fr);
+  grid-template-rows: repeat(12, [row-start] 1fr);
+}
+
+.header {
+  grid-column: 3 / 11;
+  grid-row: 2 / 3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: lightgray;
+}
+
+.player-board {
+  grid-column: 3 / 11;
+  grid-row: 5 / 7;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: lightgray;
+}
+
+.btn-start {
+  grid-column: 6 / 8;
+  grid-row: 10 / 11;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: lightgray;
+}

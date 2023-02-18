@@ -1,6 +1,6 @@
-// import "./styles.css";
-import { shipFact } from "./ships.js";
+import "./styles.css";
+import home from "./home";
 
-console.log("hello worl22asdas2sd");
+home();
 
 export {};
