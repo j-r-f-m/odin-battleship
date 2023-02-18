@@ -1,6 +1,6 @@
 import Ship from "./ships";
 
-function Gameboard() {
+function Gameboard(owner) {
   /** ----------------------------Properties ----------------------------- */
   // array containing dummy objects that represent all the ships a player has
   // whenever a player places a ship the first element of the array will be removed
@@ -12,7 +12,7 @@ function Gameboard() {
     { name: "Carrier", length: 5, direction: "inX" },
   ];
   // owner of board
-  this.owner = "null";
+  this.owner = owner;
   // placed ships
   this.placedShips = [];
   // default placing direction
@@ -51,17 +51,24 @@ function Gameboard() {
     }
   };
 
+  /**
+   * calculate all positions the ship will occupy
+   * @param {array} startCoor containg x-y-coordinates of starting point of ship
+   * @param {int} shipLength length of ship
+   * @returns array with all the coordinates the ship occupies
+   */
   this.calculate = function (startCoor, shipLength) {
+    // console.log(startCoor);
     // array that contains all the coordinates the ship occupies
     const shipCoor = [];
     // calculate endpoint of ship that player wants to place
     // check of all parts of the ship will be on the board
-    const endPointX = startCoor[0] + shipLength;
-    const endPointY = startCoor[1] + shipLength;
+    const endPointX = startCoor[0] + shipLength - 1;
+    const endPointY = startCoor[1] + shipLength - 1;
     // check for illegal moves
-    if (this.placingDirection === "inX" && endPointX > 10) {
+    if (this.placingDirection === "inX" && endPointX > 9) {
       return false;
-    } else if (this.placingDirection === "inY" && endPointY > 10) {
+    } else if (this.placingDirection === "inY" && endPointY > 9) {
       return false;
     } else if (this.placingDirection === "inX") {
       // calculate all coordinates that ship will occupy in X-direction
@@ -146,7 +153,21 @@ function Gameboard() {
     }
     return this.placedShips;
   };
+
+  /**
+   * change placing direction
+   */
+  this.changePlacingDirection = function () {
+    if (this.placingDirection === "inX") {
+      this.placingDirection = "inY";
+    } else if (this.placingDirection === "inY") {
+      this.placingDirection = "inX";
+    }
+    console.log("rotateShip");
+  };
 }
+
+export default Gameboard;
 
 /** ---------------------------------- METHODS ------------------------------ */
 
@@ -292,5 +313,3 @@ function Gameboard() {
 
 // console.log(board);
 // // console.log("asdfassadfasdf");
-
-export default Gameboard;

@@ -17,6 +17,15 @@ const screenPlacing = () => {
 
   // create sidebar and display all available ships
   crtSidebar();
+
+  // create button
+  const rotateBtn = crtNode(".content", "button", "btn-rotate");
+  rotateBtn.textContent = "Rotate Ship";
+
+  rotateBtn.addEventListener("click", () => {
+    playerBoard.changePlacingDirection();
+    console.log(playerBoard);
+  });
 };
 
 export default screenPlacing;

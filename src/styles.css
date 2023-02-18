@@ -304,4 +304,15 @@ table {
   background-color: black;
 }
 
+.btn-rotate {
+  grid-column: 2 / 4;
+  grid-row: 9 / 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: lightgray;
+}
+
 /* ------------------------------- playing screen --------------------------- */

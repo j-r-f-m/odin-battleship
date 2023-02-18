@@ -5,7 +5,7 @@ import Gameboard from "./gameboard";
 
 // --------------------- initilize objects --------------------------
 // create gameboard for player
-const playerBoard = new Gameboard();
+const playerBoard = new Gameboard("player");
 
 //screenStart();
 screenPlacing();
