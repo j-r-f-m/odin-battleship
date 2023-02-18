@@ -12,10 +12,23 @@ const crtNode = (parent, typeOfEle, nameClass, txt) => {
   // create element
   const crtEle = document.createElement(typeOfEle);
   crtEle.className = nameClass;
-  crtEle.textContent = txt;
+  //   crtEle.textContent = txt;
   // append created element
   parentEle.appendChild(crtEle);
   return crtEle;
 };
 
-export { crtNode };
+const crtTile = (parent, typeOfEle, nameId, nameClass) => {
+  // select parent
+  const parentEle = document.querySelector(parent);
+  // create element
+  const crtEle = document.createElement(typeOfEle);
+  crtEle.setAttribute("id", nameId);
+  crtEle.className = nameClass;
+
+  // append created element
+  parentEle.appendChild(crtEle);
+  return crtEle;
+};
+
+export { crtNode, crtTile };

@@ -9,11 +9,15 @@ const screenStart = () => {
   // create content container
   const contentContainer = crtNode("#body", "div", "content");
   // create header
-  crtNode(".content", "div", "header", "Battleship");
+  const header = crtNode(".content", "div", "header");
+  header.textContent = "Battleship";
+
   // player board
-  crtNode(".content", "div", "adversaries", "Player vs. A.I.");
+  const adversariesBoard = crtNode(".content", "div", "adversaries");
+  adversariesBoard.textContent = "Player vs. A.I.";
   // create button
-  const startBtn = crtNode(".content", "button", "btn-start", "Start Game");
+  const startBtn = crtNode(".content", "button", "btn-start");
+  startBtn.textContent = "Start Game";
 
   startBtn.addEventListener("click", () => {
     // delete start screen

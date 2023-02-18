@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml,\nbody,\ndiv,\nspan,\napplet,\nobject,\niframe,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nblockquote,\npre,\na,\nabbr,\nacronym,\naddress,\nbig,\ncite,\ncode,\ndel,\ndfn,\nem,\nimg,\nins,\nkbd,\nq,\ns,\nsamp,\nsmall,\nstrike,\nstrong,\nsub,\nsup,\ntt,\nvar,\nb,\nu,\ni,\ncenter,\ndl,\ndt,\ndd,\nol,\nul,\nli,\nfieldset,\nform,\nlabel,\nlegend,\ntable,\ncaption,\ntbody,\ntfoot,\nthead,\ntr,\nth,\ntd,\narticle,\naside,\ncanvas,\ndetails,\nembed,\nfigure,\nfigcaption,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\noutput,\nruby,\nsection,\nsummary,\ntime,\nmark,\naudio,\nvideo {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol,\nul {\n  list-style: none;\n}\nblockquote,\nq {\n  quotes: none;\n}\nblockquote:before,\nblockquote:after,\nq:before,\nq:after {\n  content: \"\";\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n/* -------------------------------------------------------------------------- */\n\n/* ---------------------------- layout -------------------------------------- */\n.content {\n  height: 100vh;\n  display: grid;\n  grid-template-columns: repeat(12, [col-start]1fr);\n  grid-template-rows: repeat(12, [row-start] 1fr);\n}\n\n/* -------------------------- starting screen ------------------------------- */\n.header {\n  grid-column: 3 / 11;\n  grid-row: 2 / 3;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.adversaries {\n  grid-column: 3 / 11;\n  grid-row: 5 / 7;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.btn-start {\n  grid-column: 6 / 8;\n  grid-row: 10 / 11;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n/* ------------------------------- placing screen -------------------------- */\n\n.placing-grid {\n  grid-column: 5 / 12;\n  grid-row: 3 / 10;\n\n  display: grid;\n  grid-template-columns: repeat(10, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  column-gap: 5px;\n  row-gap: 5px;\n\n  background-color: lightgrey;\n}\n\n.sidebar {\n  grid-column: 2 / 4;\n  grid-row: 3 / 8;\n\n  display: grid;\n  grid-template-columns: repeat(5, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  background-color: lightgray;\n}\n\n/* .patrol-boat-container {\n  grid-column: 1 / 6;\n  grid-row: 1 / 3;\n} */\n\n.patrol-boat-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 1 / 2;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.patrol-boat {\n  text-align: center;\n\n  grid-column: 1 / 3;\n  grid-row: 2 / 3;\n\n  background-color: black;\n}\n\n.cruiser-1-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 3 / 4;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-1 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 4 / 5;\n\n  background-color: black;\n}\n\n.cruiser-2-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 5 / 6;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-2 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 6 / 7;\n\n  background-color: black;\n}\n\n.battleship-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 7 / 8;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.battleship {\n  text-align: center;\n\n  grid-column: 1 / 5;\n  grid-row: 8 / 9;\n\n  background-color: black;\n}\n\n.carrier-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 9 / 10;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.carrier {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 10 / 11;\n\n  background-color: black;\n}\n\n/* ------------------------------- playing screen --------------------------- */\n", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;;;CAGC;;AAED;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAiFE,SAAS;EACT,UAAU;EACV,SAAS;EACT,eAAe;EACf,aAAa;EACb,wBAAwB;AAC1B;AACA,gDAAgD;AAChD;;;;;;;;;;;EAWE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;;EAEE,gBAAgB;AAClB;AACA;;EAEE,YAAY;AACd;AACA;;;;EAIE,WAAW;EACX,aAAa;AACf;AACA;EACE,yBAAyB;EACzB,iBAAiB;AACnB;AACA,+EAA+E;;AAE/E,+EAA+E;AAC/E;EACE,aAAa;EACb,aAAa;EACb,iDAAiD;EACjD,+CAA+C;AACjD;;AAEA,+EAA+E;AAC/E;EACE,mBAAmB;EACnB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA;EACE,mBAAmB;EACnB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA;EACE,kBAAkB;EAClB,iBAAiB;;EAEjB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA,8EAA8E;;AAE9E;EACE,mBAAmB;EACnB,gBAAgB;;EAEhB,aAAa;EACb,iDAAiD;EACjD,+CAA+C;;EAE/C,eAAe;EACf,YAAY;;EAEZ,2BAA2B;AAC7B;;AAEA;EACE,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,gDAAgD;EAChD,+CAA+C;;EAE/C,2BAA2B;AAC7B;;AAEA;;;GAGG;;AAEH;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,gBAAgB;;EAEhB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,iBAAiB;;EAEjB,uBAAuB;AACzB;;AAEA,+EAA+E","sourcesContent":["/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml,\nbody,\ndiv,\nspan,\napplet,\nobject,\niframe,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nblockquote,\npre,\na,\nabbr,\nacronym,\naddress,\nbig,\ncite,\ncode,\ndel,\ndfn,\nem,\nimg,\nins,\nkbd,\nq,\ns,\nsamp,\nsmall,\nstrike,\nstrong,\nsub,\nsup,\ntt,\nvar,\nb,\nu,\ni,\ncenter,\ndl,\ndt,\ndd,\nol,\nul,\nli,\nfieldset,\nform,\nlabel,\nlegend,\ntable,\ncaption,\ntbody,\ntfoot,\nthead,\ntr,\nth,\ntd,\narticle,\naside,\ncanvas,\ndetails,\nembed,\nfigure,\nfigcaption,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\noutput,\nruby,\nsection,\nsummary,\ntime,\nmark,\naudio,\nvideo {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol,\nul {\n  list-style: none;\n}\nblockquote,\nq {\n  quotes: none;\n}\nblockquote:before,\nblockquote:after,\nq:before,\nq:after {\n  content: \"\";\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n/* -------------------------------------------------------------------------- */\n\n/* ---------------------------- layout -------------------------------------- */\n.content {\n  height: 100vh;\n  display: grid;\n  grid-template-columns: repeat(12, [col-start]1fr);\n  grid-template-rows: repeat(12, [row-start] 1fr);\n}\n\n/* -------------------------- starting screen ------------------------------- */\n.header {\n  grid-column: 3 / 11;\n  grid-row: 2 / 3;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.adversaries {\n  grid-column: 3 / 11;\n  grid-row: 5 / 7;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.btn-start {\n  grid-column: 6 / 8;\n  grid-row: 10 / 11;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n/* ------------------------------- placing screen -------------------------- */\n\n.placing-grid {\n  grid-column: 5 / 12;\n  grid-row: 3 / 10;\n\n  display: grid;\n  grid-template-columns: repeat(10, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  column-gap: 5px;\n  row-gap: 5px;\n\n  background-color: lightgrey;\n}\n\n.sidebar {\n  grid-column: 2 / 4;\n  grid-row: 3 / 8;\n\n  display: grid;\n  grid-template-columns: repeat(5, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  background-color: lightgray;\n}\n\n/* .patrol-boat-container {\n  grid-column: 1 / 6;\n  grid-row: 1 / 3;\n} */\n\n.patrol-boat-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 1 / 2;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.patrol-boat {\n  text-align: center;\n\n  grid-column: 1 / 3;\n  grid-row: 2 / 3;\n\n  background-color: black;\n}\n\n.cruiser-1-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 3 / 4;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-1 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 4 / 5;\n\n  background-color: black;\n}\n\n.cruiser-2-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 5 / 6;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-2 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 6 / 7;\n\n  background-color: black;\n}\n\n.battleship-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 7 / 8;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.battleship {\n  text-align: center;\n\n  grid-column: 1 / 5;\n  grid-row: 8 / 9;\n\n  background-color: black;\n}\n\n.carrier-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 9 / 10;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.carrier {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 10 / 11;\n\n  background-color: black;\n}\n\n/* ------------------------------- playing screen --------------------------- */\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml,\nbody,\ndiv,\nspan,\napplet,\nobject,\niframe,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nblockquote,\npre,\na,\nabbr,\nacronym,\naddress,\nbig,\ncite,\ncode,\ndel,\ndfn,\nem,\nimg,\nins,\nkbd,\nq,\ns,\nsamp,\nsmall,\nstrike,\nstrong,\nsub,\nsup,\ntt,\nvar,\nb,\nu,\ni,\ncenter,\ndl,\ndt,\ndd,\nol,\nul,\nli,\nfieldset,\nform,\nlabel,\nlegend,\ntable,\ncaption,\ntbody,\ntfoot,\nthead,\ntr,\nth,\ntd,\narticle,\naside,\ncanvas,\ndetails,\nembed,\nfigure,\nfigcaption,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\noutput,\nruby,\nsection,\nsummary,\ntime,\nmark,\naudio,\nvideo {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol,\nul {\n  list-style: none;\n}\nblockquote,\nq {\n  quotes: none;\n}\nblockquote:before,\nblockquote:after,\nq:before,\nq:after {\n  content: \"\";\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n/* -------------------------------------------------------------------------- */\n\n/* ---------------------------- layout -------------------------------------- */\n.content {\n  height: 100vh;\n  display: grid;\n  grid-template-columns: repeat(12, [col-start]1fr);\n  grid-template-rows: repeat(12, [row-start] 1fr);\n}\n\n/* -------------------------- starting screen ------------------------------- */\n.header {\n  grid-column: 3 / 11;\n  grid-row: 2 / 3;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.adversaries {\n  grid-column: 3 / 11;\n  grid-row: 5 / 7;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.btn-start {\n  grid-column: 6 / 8;\n  grid-row: 10 / 11;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n/* ------------------------------- placing screen -------------------------- */\n\n.grid-container {\n  grid-column: 5 / 12;\n  grid-row: 3 / 10;\n\n  display: grid;\n  grid-template-columns: repeat(10, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  column-gap: 5px;\n  row-gap: 5px;\n\n  background-color: lightgrey;\n  border: 5px solid lightgray;\n}\n\n.tile {\n  background-color: lightblue;\n}\n\n.sidebar {\n  grid-column: 2 / 4;\n  grid-row: 3 / 8;\n\n  display: grid;\n  grid-template-columns: repeat(5, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  background-color: lightgray;\n  border: 5px solid lightgray;\n}\n\n.patrol-boat-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 1 / 2;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.patrol-boat {\n  text-align: center;\n\n  grid-column: 1 / 3;\n  grid-row: 2 / 3;\n\n  background-color: black;\n}\n\n.cruiser-1-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 3 / 4;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-1 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 4 / 5;\n\n  background-color: black;\n}\n\n.cruiser-2-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 5 / 6;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-2 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 6 / 7;\n\n  background-color: black;\n}\n\n.battleship-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 7 / 8;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.battleship {\n  text-align: center;\n\n  grid-column: 1 / 5;\n  grid-row: 8 / 9;\n\n  background-color: black;\n}\n\n.carrier-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 9 / 10;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.carrier {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 10 / 11;\n\n  background-color: black;\n}\n\n/* ------------------------------- playing screen --------------------------- */\n", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;;;CAGC;;AAED;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAiFE,SAAS;EACT,UAAU;EACV,SAAS;EACT,eAAe;EACf,aAAa;EACb,wBAAwB;AAC1B;AACA,gDAAgD;AAChD;;;;;;;;;;;EAWE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;;EAEE,gBAAgB;AAClB;AACA;;EAEE,YAAY;AACd;AACA;;;;EAIE,WAAW;EACX,aAAa;AACf;AACA;EACE,yBAAyB;EACzB,iBAAiB;AACnB;AACA,+EAA+E;;AAE/E,+EAA+E;AAC/E;EACE,aAAa;EACb,aAAa;EACb,iDAAiD;EACjD,+CAA+C;AACjD;;AAEA,+EAA+E;AAC/E;EACE,mBAAmB;EACnB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA;EACE,mBAAmB;EACnB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA;EACE,kBAAkB;EAClB,iBAAiB;;EAEjB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA,8EAA8E;;AAE9E;EACE,mBAAmB;EACnB,gBAAgB;;EAEhB,aAAa;EACb,iDAAiD;EACjD,+CAA+C;;EAE/C,eAAe;EACf,YAAY;;EAEZ,2BAA2B;EAC3B,2BAA2B;AAC7B;;AAEA;EACE,2BAA2B;AAC7B;;AAEA;EACE,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,gDAAgD;EAChD,+CAA+C;;EAE/C,2BAA2B;EAC3B,2BAA2B;AAC7B;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,gBAAgB;;EAEhB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,iBAAiB;;EAEjB,uBAAuB;AACzB;;AAEA,+EAA+E","sourcesContent":["/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml,\nbody,\ndiv,\nspan,\napplet,\nobject,\niframe,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nblockquote,\npre,\na,\nabbr,\nacronym,\naddress,\nbig,\ncite,\ncode,\ndel,\ndfn,\nem,\nimg,\nins,\nkbd,\nq,\ns,\nsamp,\nsmall,\nstrike,\nstrong,\nsub,\nsup,\ntt,\nvar,\nb,\nu,\ni,\ncenter,\ndl,\ndt,\ndd,\nol,\nul,\nli,\nfieldset,\nform,\nlabel,\nlegend,\ntable,\ncaption,\ntbody,\ntfoot,\nthead,\ntr,\nth,\ntd,\narticle,\naside,\ncanvas,\ndetails,\nembed,\nfigure,\nfigcaption,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\noutput,\nruby,\nsection,\nsummary,\ntime,\nmark,\naudio,\nvideo {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol,\nul {\n  list-style: none;\n}\nblockquote,\nq {\n  quotes: none;\n}\nblockquote:before,\nblockquote:after,\nq:before,\nq:after {\n  content: \"\";\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n/* -------------------------------------------------------------------------- */\n\n/* ---------------------------- layout -------------------------------------- */\n.content {\n  height: 100vh;\n  display: grid;\n  grid-template-columns: repeat(12, [col-start]1fr);\n  grid-template-rows: repeat(12, [row-start] 1fr);\n}\n\n/* -------------------------- starting screen ------------------------------- */\n.header {\n  grid-column: 3 / 11;\n  grid-row: 2 / 3;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.adversaries {\n  grid-column: 3 / 11;\n  grid-row: 5 / 7;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.btn-start {\n  grid-column: 6 / 8;\n  grid-row: 10 / 11;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n/* ------------------------------- placing screen -------------------------- */\n\n.grid-container {\n  grid-column: 5 / 12;\n  grid-row: 3 / 10;\n\n  display: grid;\n  grid-template-columns: repeat(10, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  column-gap: 5px;\n  row-gap: 5px;\n\n  background-color: lightgrey;\n  border: 5px solid lightgray;\n}\n\n.tile {\n  background-color: lightblue;\n}\n\n.sidebar {\n  grid-column: 2 / 4;\n  grid-row: 3 / 8;\n\n  display: grid;\n  grid-template-columns: repeat(5, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  background-color: lightgray;\n  border: 5px solid lightgray;\n}\n\n.patrol-boat-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 1 / 2;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.patrol-boat {\n  text-align: center;\n\n  grid-column: 1 / 3;\n  grid-row: 2 / 3;\n\n  background-color: black;\n}\n\n.cruiser-1-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 3 / 4;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-1 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 4 / 5;\n\n  background-color: black;\n}\n\n.cruiser-2-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 5 / 6;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-2 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 6 / 7;\n\n  background-color: black;\n}\n\n.battleship-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 7 / 8;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.battleship {\n  text-align: center;\n\n  grid-column: 1 / 5;\n  grid-row: 8 / 9;\n\n  background-color: black;\n}\n\n.carrier-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 9 / 10;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.carrier {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 10 / 11;\n\n  background-color: black;\n}\n\n/* ------------------------------- playing screen --------------------------- */\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -515,7 +515,8 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "crtNode": () => (/* binding */ crtNode)
+/* harmony export */   "crtNode": () => (/* binding */ crtNode),
+/* harmony export */   "crtTile": () => (/* binding */ crtTile)
 /* harmony export */ });
 /**
  * select a parent dom-element create a dom-element and append the created
@@ -531,7 +532,20 @@ const crtNode = (parent, typeOfEle, nameClass, txt) => {
   // create element
   const crtEle = document.createElement(typeOfEle);
   crtEle.className = nameClass;
-  crtEle.textContent = txt;
+  //   crtEle.textContent = txt;
+  // append created element
+  parentEle.appendChild(crtEle);
+  return crtEle;
+};
+
+const crtTile = (parent, typeOfEle, nameId, nameClass) => {
+  // select parent
+  const parentEle = document.querySelector(parent);
+  // create element
+  const crtEle = document.createElement(typeOfEle);
+  crtEle.setAttribute("id", nameId);
+  crtEle.className = nameClass;
+
   // append created element
   parentEle.appendChild(crtEle);
   return crtEle;
@@ -885,6 +899,35 @@ const playerBoard = new _gameboard__WEBPACK_IMPORTED_MODULE_3__["default"]();
 
 /***/ }),
 
+/***/ "./src/screenGrid.js":
+/*!***************************!*\
+  !*** ./src/screenGrid.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _domHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./domHelper */ "./src/domHelper.js");
+
+const grid = () => {
+  // create grid-container
+  const gridDom = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".content", "div", "grid-container");
+
+  for (let i = 0; i < 100; i++) {
+    let currTile = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtTile)(".grid-container", "div", `tile-${i}`, "tile");
+    currTile.addEventListener("click", () => {
+      console.log("click");
+    });
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (grid);
+
+
+/***/ }),
+
 /***/ "./src/screenPlacing.js":
 /*!******************************!*\
   !*** ./src/screenPlacing.js ***!
@@ -899,6 +942,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _gameboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gameboard */ "./src/gameboard.js");
 /* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index */ "./src/index.js");
 /* harmony import */ var _screenSidebar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./screenSidebar */ "./src/screenSidebar.js");
+/* harmony import */ var _screenGrid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./screenGrid */ "./src/screenGrid.js");
+
 
 
 
@@ -912,7 +957,9 @@ const screenPlacing = () => {
   // create content container
   const contentContainer = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)("#body", "div", "content");
   // create placing grid
-  const placingGrid = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".content", "div", "placing-grid");
+  //   const placingGrid = crtNode(".content", "div", "placing-grid");
+  (0,_screenGrid__WEBPACK_IMPORTED_MODULE_4__["default"])();
+
   // create sidebar and display all available ships
   (0,_screenSidebar__WEBPACK_IMPORTED_MODULE_3__["default"])();
 };
@@ -943,39 +990,24 @@ const crtSidebar = () => {
   const sidebar = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".content", "div", "sidebar");
 
   // create boats
-  const patrolBoatHeader = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(
-    ".sidebar",
-    "div",
-    "patrol-boat-header",
-    "Patrol Boat"
-  );
+  const patrolBoatHeader = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".sidebar", "div", "patrol-boat-header");
+  patrolBoatHeader.textContent = "Patrol Boat";
   const patrolBoat = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".sidebar", "div", "patrol-boat");
 
-  const cruiser1Header = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(
-    ".sidebar",
-    "div",
-    "cruiser-1-header",
-    "Cruiser 1"
-  );
+  const cruiser1Header = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".sidebar", "div", "cruiser-1-header");
+  cruiser1Header.textContent = "Cruiser 1";
   const cruiser1 = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".sidebar", "div", "cruiser-1");
 
-  const cruiser2Header = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(
-    ".sidebar",
-    "div",
-    "cruiser-2-header",
-    "Cruiser 2"
-  );
+  const cruiser2Header = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".sidebar", "div", "cruiser-2-header");
+  cruiser2Header.textContent = "Cruiser 2";
   const cruiser2 = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".sidebar", "div", "cruiser-2");
 
-  const battleshipHeader = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(
-    ".sidebar",
-    "div",
-    "battleship-header",
-    "Battleship"
-  );
+  const battleshipHeader = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".sidebar", "div", "battleship-header");
+  battleshipHeader.textContent = "Battleship";
   const battleship = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".sidebar", "div", "battleship");
 
-  const carrierHeader = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".sidebar", "div", "carrier-header", "Carrier");
+  const carrierHeader = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".sidebar", "div", "carrier-header");
+  carrierHeader.textContent = "Carrier";
   const carrier = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".sidebar", "div", "carrier");
 };
 
@@ -1008,11 +1040,15 @@ const screenStart = () => {
   // create content container
   const contentContainer = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)("#body", "div", "content");
   // create header
-  (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".content", "div", "header", "Battleship");
+  const header = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".content", "div", "header");
+  header.textContent = "Battleship";
+
   // player board
-  (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".content", "div", "adversaries", "Player vs. A.I.");
+  const adversariesBoard = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".content", "div", "adversaries");
+  adversariesBoard.textContent = "Player vs. A.I.";
   // create button
-  const startBtn = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".content", "button", "btn-start", "Start Game");
+  const startBtn = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".content", "button", "btn-start");
+  startBtn.textContent = "Start Game";
 
   startBtn.addEventListener("click", () => {
     // delete start screen
@@ -1175,4 +1211,4 @@ function Ship(length, name) {
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=bundleeba909aa1a7e1f29d9f5.js.map
+//# sourceMappingURL=bundle297f1fa899ece3181e8b.js.map
