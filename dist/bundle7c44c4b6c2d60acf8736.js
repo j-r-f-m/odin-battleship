@@ -543,10 +543,10 @@ const crtNode = (parent, typeOfEle, nameClass, txt) => {
 
 /***/ }),
 
-/***/ "./src/home.js":
-/*!*********************!*\
-  !*** ./src/home.js ***!
-  \*********************/
+/***/ "./src/startScreen.js":
+/*!****************************!*\
+  !*** ./src/startScreen.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -556,9 +556,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _domHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./domHelper */ "./src/domHelper.js");
 
 
-const home = () => {
+const startScreen = () => {
   // create content container
-  (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)("#body", "div", "content");
+  const contentContainer = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)("#body", "div", "content");
   // create header
   (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".content", "div", "header", "Battleship");
   // player board
@@ -567,12 +567,13 @@ const home = () => {
   const startBtn = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)(".content", "button", "btn-start", "Start Game");
   startBtn.addEventListener("click", () => {
     // delete start screen
+    contentContainer.remove();
     // create placing screen
     console.log("start button");
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (home);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (startScreen);
 
 
 /***/ })
@@ -658,11 +659,11 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
-/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home */ "./src/home.js");
+/* harmony import */ var _startScreen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./startScreen */ "./src/startScreen.js");
 
 
 
-(0,_home__WEBPACK_IMPORTED_MODULE_1__["default"])();
+(0,_startScreen__WEBPACK_IMPORTED_MODULE_1__["default"])();
 
 
 
@@ -670,4 +671,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlecd7d8aa918b044468456.js.map
+//# sourceMappingURL=bundle7c44c4b6c2d60acf8736.js.map

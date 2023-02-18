@@ -1,6 +1,6 @@
 import "./styles.css";
-import home from "./home";
+import startScreen from "./startScreen";
 
-home();
+startScreen();
 
 export {};
