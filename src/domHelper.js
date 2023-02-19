@@ -1,4 +1,9 @@
 import { playerBoard } from "./index";
+import {
+  eventProjection,
+  eventDeleteProjection,
+  eventPlaceShip,
+} from "./screenGrid";
 
 /**
  * select a parent dom-element create a dom-element and append the created
@@ -60,8 +65,14 @@ const projectingShip = (shipCoor) => {
   for (let i = 0; i < shipCoor.length; i++) {
     // turn current [x,y] array into a string containing the coordinates
     let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
+    // give tile id with created string
     let currTile = document.getElementById(stringHelp);
-    currTile.style.backgroundColor = "yellow";
+    console.log(currTile.classList);
+    if (currTile.classList.contains("ship")) {
+      //
+    } else {
+      currTile.style.backgroundColor = "yellow";
+    }
   }
 };
 
@@ -76,12 +87,16 @@ const deleteProjection = (shipCoor) => {
     // turn current [x,y] array into an id-string
     let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
     let currTile = document.getElementById(stringHelp);
-    currTile.style.backgroundColor = "lightblue";
+
+    if (currTile.classList.contains("ship")) {
+    } else {
+      currTile.style.backgroundColor = "lightblue";
+    }
   }
 };
 
 const placeShipOnBoard = (coor, length) => {
-  console.log(coor);
+  // console.log(coor);
   // calculate location of ship
   const shipCoor = calculate(coor, length);
 
@@ -89,19 +104,25 @@ const placeShipOnBoard = (coor, length) => {
     // turn current [x,y] array into a string containing the coordinates
     let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
     let currTile = document.getElementById(stringHelp);
+    //
+    currTile.classList.add("ship");
     currTile.style.backgroundColor = "black";
   }
 };
 
-const removeEventsFromTiles = (coor) => {
+const removeEventsFromTiles = (coor, length) => {
+  //console.log("remove");
   const shipCoor = calculate(coor, length);
+  //console.log(shipCoor);
   for (let i = 0; i < shipCoor.length; i++) {
+    //console.log(i);
     // turn current [x,y] array into an id-string
     let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
     let currTile = document.getElementById(stringHelp);
-    currTile.removeEventListener("click", callEventProjection);
-    currTile.removeEventListener("mouseenter");
-    currTile.removeEventListener("mouseleave");
+    console.log(currTile);
+    currTile.removeEventListener("mouseenter", eventProjection);
+    currTile.removeEventListener("mouseleave", eventDeleteProjection);
+    currTile.removeEventListener("click", eventPlaceShip);
   }
 };
 
@@ -115,7 +136,7 @@ const removeEventsFromTiles = (coor) => {
  * @returns array with all the coordinates the ship occupies
  */
 const calculate = function (startCoor, shipLength) {
-  console.log(startCoor);
+  //console.log(startCoor);
   // array that contains all the coordinates the ship occupies
   const shipCoor = [];
   // calculate endpoint of ship that player wants to place
@@ -133,6 +154,7 @@ const calculate = function (startCoor, shipLength) {
       let currCoor = [startCoor[0] + i, startCoor[1]];
       shipCoor.push(currCoor);
     }
+    //console.log("x");
     return shipCoor;
   } else if (playerBoard.placingDirection === "inY") {
     // calculate all coordinates that ship will occupy in Y-direction
@@ -140,6 +162,8 @@ const calculate = function (startCoor, shipLength) {
       let currCoor = [startCoor[0], startCoor[1] + i];
       shipCoor.push(currCoor);
     }
+    console.log("shipCoor");
+    console.log(shipCoor);
     return shipCoor;
   }
 };

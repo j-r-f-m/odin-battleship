@@ -2,7 +2,7 @@ import { crtNode } from "./domHelper";
 import Gameboard from "./gameboard";
 import { playerBoard } from "./index";
 import crtSidebar from "./screenSidebar";
-import grid from "./screenGrid";
+import { grid } from "./screenGrid";
 
 /**
  * create placing screen

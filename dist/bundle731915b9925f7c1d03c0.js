@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml,\nbody,\ndiv,\nspan,\napplet,\nobject,\niframe,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nblockquote,\npre,\na,\nabbr,\nacronym,\naddress,\nbig,\ncite,\ncode,\ndel,\ndfn,\nem,\nimg,\nins,\nkbd,\nq,\ns,\nsamp,\nsmall,\nstrike,\nstrong,\nsub,\nsup,\ntt,\nvar,\nb,\nu,\ni,\ncenter,\ndl,\ndt,\ndd,\nol,\nul,\nli,\nfieldset,\nform,\nlabel,\nlegend,\ntable,\ncaption,\ntbody,\ntfoot,\nthead,\ntr,\nth,\ntd,\narticle,\naside,\ncanvas,\ndetails,\nembed,\nfigure,\nfigcaption,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\noutput,\nruby,\nsection,\nsummary,\ntime,\nmark,\naudio,\nvideo {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol,\nul {\n  list-style: none;\n}\nblockquote,\nq {\n  quotes: none;\n}\nblockquote:before,\nblockquote:after,\nq:before,\nq:after {\n  content: \"\";\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n/* -------------------------------------------------------------------------- */\n\n/* ---------------------------- layout -------------------------------------- */\n.content {\n  height: 100vh;\n  display: grid;\n  grid-template-columns: repeat(12, [col-start]1fr);\n  grid-template-rows: repeat(12, [row-start] 1fr);\n}\n\n/* -------------------------- starting screen ------------------------------- */\n.header {\n  grid-column: 3 / 11;\n  grid-row: 2 / 3;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.adversaries {\n  grid-column: 3 / 11;\n  grid-row: 5 / 7;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.btn-start {\n  grid-column: 6 / 8;\n  grid-row: 10 / 11;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n/* ------------------------------- placing screen -------------------------- */\n\n.grid-container {\n  grid-column: 5 / 12;\n  grid-row: 3 / 10;\n\n  display: grid;\n  grid-template-columns: repeat(10, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  column-gap: 5px;\n  row-gap: 5px;\n\n  background-color: lightgrey;\n  border: 5px solid lightgray;\n}\n\n.tile {\n  background-color: lightblue;\n}\n\n.sidebar {\n  grid-column: 2 / 4;\n  grid-row: 3 / 8;\n\n  display: grid;\n  grid-template-columns: repeat(5, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  background-color: lightgray;\n  border: 5px solid lightgray;\n}\n\n.patrol-boat-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 1 / 2;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.patrol-boat {\n  text-align: center;\n\n  grid-column: 1 / 3;\n  grid-row: 2 / 3;\n\n  background-color: black;\n}\n\n.cruiser-1-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 3 / 4;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-1 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 4 / 5;\n\n  background-color: black;\n}\n\n.cruiser-2-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 5 / 6;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-2 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 6 / 7;\n\n  background-color: black;\n}\n\n.battleship-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 7 / 8;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.battleship {\n  text-align: center;\n\n  grid-column: 1 / 5;\n  grid-row: 8 / 9;\n\n  background-color: black;\n}\n\n.carrier-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 9 / 10;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.carrier {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 10 / 11;\n\n  background-color: black;\n}\n\n.btn-rotate {\n  grid-column: 2 / 4;\n  grid-row: 9 / 10;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n/* ------------------------------- playing screen --------------------------- */\n", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;;;CAGC;;AAED;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAiFE,SAAS;EACT,UAAU;EACV,SAAS;EACT,eAAe;EACf,aAAa;EACb,wBAAwB;AAC1B;AACA,gDAAgD;AAChD;;;;;;;;;;;EAWE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;;EAEE,gBAAgB;AAClB;AACA;;EAEE,YAAY;AACd;AACA;;;;EAIE,WAAW;EACX,aAAa;AACf;AACA;EACE,yBAAyB;EACzB,iBAAiB;AACnB;AACA,+EAA+E;;AAE/E,+EAA+E;AAC/E;EACE,aAAa;EACb,aAAa;EACb,iDAAiD;EACjD,+CAA+C;AACjD;;AAEA,+EAA+E;AAC/E;EACE,mBAAmB;EACnB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA;EACE,mBAAmB;EACnB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA;EACE,kBAAkB;EAClB,iBAAiB;;EAEjB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA,8EAA8E;;AAE9E;EACE,mBAAmB;EACnB,gBAAgB;;EAEhB,aAAa;EACb,iDAAiD;EACjD,+CAA+C;;EAE/C,eAAe;EACf,YAAY;;EAEZ,2BAA2B;EAC3B,2BAA2B;AAC7B;;AAEA;EACE,2BAA2B;AAC7B;;AAEA;EACE,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,gDAAgD;EAChD,+CAA+C;;EAE/C,2BAA2B;EAC3B,2BAA2B;AAC7B;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,gBAAgB;;EAEhB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,iBAAiB;;EAEjB,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;EAClB,gBAAgB;;EAEhB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA,+EAA+E","sourcesContent":["/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml,\nbody,\ndiv,\nspan,\napplet,\nobject,\niframe,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nblockquote,\npre,\na,\nabbr,\nacronym,\naddress,\nbig,\ncite,\ncode,\ndel,\ndfn,\nem,\nimg,\nins,\nkbd,\nq,\ns,\nsamp,\nsmall,\nstrike,\nstrong,\nsub,\nsup,\ntt,\nvar,\nb,\nu,\ni,\ncenter,\ndl,\ndt,\ndd,\nol,\nul,\nli,\nfieldset,\nform,\nlabel,\nlegend,\ntable,\ncaption,\ntbody,\ntfoot,\nthead,\ntr,\nth,\ntd,\narticle,\naside,\ncanvas,\ndetails,\nembed,\nfigure,\nfigcaption,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\noutput,\nruby,\nsection,\nsummary,\ntime,\nmark,\naudio,\nvideo {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol,\nul {\n  list-style: none;\n}\nblockquote,\nq {\n  quotes: none;\n}\nblockquote:before,\nblockquote:after,\nq:before,\nq:after {\n  content: \"\";\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n/* -------------------------------------------------------------------------- */\n\n/* ---------------------------- layout -------------------------------------- */\n.content {\n  height: 100vh;\n  display: grid;\n  grid-template-columns: repeat(12, [col-start]1fr);\n  grid-template-rows: repeat(12, [row-start] 1fr);\n}\n\n/* -------------------------- starting screen ------------------------------- */\n.header {\n  grid-column: 3 / 11;\n  grid-row: 2 / 3;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.adversaries {\n  grid-column: 3 / 11;\n  grid-row: 5 / 7;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.btn-start {\n  grid-column: 6 / 8;\n  grid-row: 10 / 11;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n/* ------------------------------- placing screen -------------------------- */\n\n.grid-container {\n  grid-column: 5 / 12;\n  grid-row: 3 / 10;\n\n  display: grid;\n  grid-template-columns: repeat(10, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  column-gap: 5px;\n  row-gap: 5px;\n\n  background-color: lightgrey;\n  border: 5px solid lightgray;\n}\n\n.tile {\n  background-color: lightblue;\n}\n\n.sidebar {\n  grid-column: 2 / 4;\n  grid-row: 3 / 8;\n\n  display: grid;\n  grid-template-columns: repeat(5, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  background-color: lightgray;\n  border: 5px solid lightgray;\n}\n\n.patrol-boat-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 1 / 2;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.patrol-boat {\n  text-align: center;\n\n  grid-column: 1 / 3;\n  grid-row: 2 / 3;\n\n  background-color: black;\n}\n\n.cruiser-1-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 3 / 4;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-1 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 4 / 5;\n\n  background-color: black;\n}\n\n.cruiser-2-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 5 / 6;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-2 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 6 / 7;\n\n  background-color: black;\n}\n\n.battleship-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 7 / 8;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.battleship {\n  text-align: center;\n\n  grid-column: 1 / 5;\n  grid-row: 8 / 9;\n\n  background-color: black;\n}\n\n.carrier-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 9 / 10;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.carrier {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 10 / 11;\n\n  background-color: black;\n}\n\n.btn-rotate {\n  grid-column: 2 / 4;\n  grid-row: 9 / 10;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n/* ------------------------------- playing screen --------------------------- */\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml,\nbody,\ndiv,\nspan,\napplet,\nobject,\niframe,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nblockquote,\npre,\na,\nabbr,\nacronym,\naddress,\nbig,\ncite,\ncode,\ndel,\ndfn,\nem,\nimg,\nins,\nkbd,\nq,\ns,\nsamp,\nsmall,\nstrike,\nstrong,\nsub,\nsup,\ntt,\nvar,\nb,\nu,\ni,\ncenter,\ndl,\ndt,\ndd,\nol,\nul,\nli,\nfieldset,\nform,\nlabel,\nlegend,\ntable,\ncaption,\ntbody,\ntfoot,\nthead,\ntr,\nth,\ntd,\narticle,\naside,\ncanvas,\ndetails,\nembed,\nfigure,\nfigcaption,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\noutput,\nruby,\nsection,\nsummary,\ntime,\nmark,\naudio,\nvideo {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol,\nul {\n  list-style: none;\n}\nblockquote,\nq {\n  quotes: none;\n}\nblockquote:before,\nblockquote:after,\nq:before,\nq:after {\n  content: \"\";\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n/* -------------------------------------------------------------------------- */\n\n/* ---------------------------- layout -------------------------------------- */\n.content {\n  height: 100vh;\n  display: grid;\n  grid-template-columns: repeat(12, [col-start]1fr);\n  grid-template-rows: repeat(12, [row-start] 1fr);\n}\n\n/* -------------------------- starting screen ------------------------------- */\n.header {\n  grid-column: 3 / 11;\n  grid-row: 2 / 3;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.adversaries {\n  grid-column: 3 / 11;\n  grid-row: 5 / 7;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.btn-start {\n  grid-column: 6 / 8;\n  grid-row: 10 / 11;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n/* ------------------------------- placing screen -------------------------- */\n\n.grid-container {\n  grid-column: 5 / 12;\n  grid-row: 3 / 10;\n\n  display: grid;\n  grid-template-columns: repeat(10, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  column-gap: 5px;\n  row-gap: 5px;\n\n  background-color: lightgrey;\n  border: 5px solid lightgray;\n}\n\n.tile {\n  background-color: lightblue;\n}\n\n.sidebar {\n  grid-column: 2 / 4;\n  grid-row: 3 / 8;\n\n  display: grid;\n  grid-template-columns: repeat(5, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  background-color: lightgray;\n  border: 5px solid lightgray;\n}\n\n.patrol-boat-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 1 / 2;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.patrol-boat {\n  text-align: center;\n\n  grid-column: 1 / 3;\n  grid-row: 2 / 3;\n\n  background-color: black;\n}\n\n.cruiser-1-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 3 / 4;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-1 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 4 / 5;\n\n  background-color: black;\n}\n\n.cruiser-2-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 5 / 6;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-2 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 6 / 7;\n\n  background-color: black;\n}\n\n.battleship-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 7 / 8;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.battleship {\n  text-align: center;\n\n  grid-column: 1 / 5;\n  grid-row: 8 / 9;\n\n  background-color: black;\n}\n\n.carrier-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 9 / 10;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.carrier {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 10 / 11;\n\n  background-color: black;\n}\n\n.btn-rotate {\n  grid-column: 2 / 4;\n  grid-row: 9 / 10;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.ship {\n  background-color: black;\n}\n\n/* ------------------------------- playing screen --------------------------- */\n", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;;;CAGC;;AAED;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAiFE,SAAS;EACT,UAAU;EACV,SAAS;EACT,eAAe;EACf,aAAa;EACb,wBAAwB;AAC1B;AACA,gDAAgD;AAChD;;;;;;;;;;;EAWE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;;EAEE,gBAAgB;AAClB;AACA;;EAEE,YAAY;AACd;AACA;;;;EAIE,WAAW;EACX,aAAa;AACf;AACA;EACE,yBAAyB;EACzB,iBAAiB;AACnB;AACA,+EAA+E;;AAE/E,+EAA+E;AAC/E;EACE,aAAa;EACb,aAAa;EACb,iDAAiD;EACjD,+CAA+C;AACjD;;AAEA,+EAA+E;AAC/E;EACE,mBAAmB;EACnB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA;EACE,mBAAmB;EACnB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA;EACE,kBAAkB;EAClB,iBAAiB;;EAEjB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA,8EAA8E;;AAE9E;EACE,mBAAmB;EACnB,gBAAgB;;EAEhB,aAAa;EACb,iDAAiD;EACjD,+CAA+C;;EAE/C,eAAe;EACf,YAAY;;EAEZ,2BAA2B;EAC3B,2BAA2B;AAC7B;;AAEA;EACE,2BAA2B;AAC7B;;AAEA;EACE,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,gDAAgD;EAChD,+CAA+C;;EAE/C,2BAA2B;EAC3B,2BAA2B;AAC7B;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,eAAe;;EAEf,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,gBAAgB;;EAEhB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;;EAElB,kBAAkB;EAClB,iBAAiB;;EAEjB,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;EAClB,gBAAgB;;EAEhB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;;EAEnB,2BAA2B;AAC7B;;AAEA;EACE,uBAAuB;AACzB;;AAEA,+EAA+E","sourcesContent":["/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml,\nbody,\ndiv,\nspan,\napplet,\nobject,\niframe,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nblockquote,\npre,\na,\nabbr,\nacronym,\naddress,\nbig,\ncite,\ncode,\ndel,\ndfn,\nem,\nimg,\nins,\nkbd,\nq,\ns,\nsamp,\nsmall,\nstrike,\nstrong,\nsub,\nsup,\ntt,\nvar,\nb,\nu,\ni,\ncenter,\ndl,\ndt,\ndd,\nol,\nul,\nli,\nfieldset,\nform,\nlabel,\nlegend,\ntable,\ncaption,\ntbody,\ntfoot,\nthead,\ntr,\nth,\ntd,\narticle,\naside,\ncanvas,\ndetails,\nembed,\nfigure,\nfigcaption,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\noutput,\nruby,\nsection,\nsummary,\ntime,\nmark,\naudio,\nvideo {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol,\nul {\n  list-style: none;\n}\nblockquote,\nq {\n  quotes: none;\n}\nblockquote:before,\nblockquote:after,\nq:before,\nq:after {\n  content: \"\";\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n/* -------------------------------------------------------------------------- */\n\n/* ---------------------------- layout -------------------------------------- */\n.content {\n  height: 100vh;\n  display: grid;\n  grid-template-columns: repeat(12, [col-start]1fr);\n  grid-template-rows: repeat(12, [row-start] 1fr);\n}\n\n/* -------------------------- starting screen ------------------------------- */\n.header {\n  grid-column: 3 / 11;\n  grid-row: 2 / 3;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.adversaries {\n  grid-column: 3 / 11;\n  grid-row: 5 / 7;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.btn-start {\n  grid-column: 6 / 8;\n  grid-row: 10 / 11;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n/* ------------------------------- placing screen -------------------------- */\n\n.grid-container {\n  grid-column: 5 / 12;\n  grid-row: 3 / 10;\n\n  display: grid;\n  grid-template-columns: repeat(10, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  column-gap: 5px;\n  row-gap: 5px;\n\n  background-color: lightgrey;\n  border: 5px solid lightgray;\n}\n\n.tile {\n  background-color: lightblue;\n}\n\n.sidebar {\n  grid-column: 2 / 4;\n  grid-row: 3 / 8;\n\n  display: grid;\n  grid-template-columns: repeat(5, [col-start]1fr);\n  grid-template-rows: repeat(10, [row-start] 1fr);\n\n  background-color: lightgray;\n  border: 5px solid lightgray;\n}\n\n.patrol-boat-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 1 / 2;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.patrol-boat {\n  text-align: center;\n\n  grid-column: 1 / 3;\n  grid-row: 2 / 3;\n\n  background-color: black;\n}\n\n.cruiser-1-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 3 / 4;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-1 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 4 / 5;\n\n  background-color: black;\n}\n\n.cruiser-2-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 5 / 6;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.cruiser-2 {\n  text-align: center;\n\n  grid-column: 1 / 4;\n  grid-row: 6 / 7;\n\n  background-color: black;\n}\n\n.battleship-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 7 / 8;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.battleship {\n  text-align: center;\n\n  grid-column: 1 / 5;\n  grid-row: 8 / 9;\n\n  background-color: black;\n}\n\n.carrier-header {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 9 / 10;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.carrier {\n  text-align: center;\n\n  grid-column: 1 / 6;\n  grid-row: 10 / 11;\n\n  background-color: black;\n}\n\n.btn-rotate {\n  grid-column: 2 / 4;\n  grid-row: 9 / 10;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  background-color: lightgray;\n}\n\n.ship {\n  background-color: black;\n}\n\n/* ------------------------------- playing screen --------------------------- */\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -524,6 +524,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "removeEventsFromTiles": () => (/* binding */ removeEventsFromTiles)
 /* harmony export */ });
 /* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ "./src/index.js");
+/* harmony import */ var _screenGrid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./screenGrid */ "./src/screenGrid.js");
+
 
 
 /**
@@ -586,8 +588,14 @@ const projectingShip = (shipCoor) => {
   for (let i = 0; i < shipCoor.length; i++) {
     // turn current [x,y] array into a string containing the coordinates
     let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
+    // give tile id with created string
     let currTile = document.getElementById(stringHelp);
-    currTile.style.backgroundColor = "yellow";
+    console.log(currTile.classList);
+    if (currTile.classList.contains("ship")) {
+      //
+    } else {
+      currTile.style.backgroundColor = "yellow";
+    }
   }
 };
 
@@ -602,12 +610,16 @@ const deleteProjection = (shipCoor) => {
     // turn current [x,y] array into an id-string
     let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
     let currTile = document.getElementById(stringHelp);
-    currTile.style.backgroundColor = "lightblue";
+
+    if (currTile.classList.contains("ship")) {
+    } else {
+      currTile.style.backgroundColor = "lightblue";
+    }
   }
 };
 
 const placeShipOnBoard = (coor, length) => {
-  console.log(coor);
+  // console.log(coor);
   // calculate location of ship
   const shipCoor = calculate(coor, length);
 
@@ -615,19 +627,25 @@ const placeShipOnBoard = (coor, length) => {
     // turn current [x,y] array into a string containing the coordinates
     let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
     let currTile = document.getElementById(stringHelp);
+    //
+    currTile.classList.add("ship");
     currTile.style.backgroundColor = "black";
   }
 };
 
-const removeEventsFromTiles = (coor) => {
+const removeEventsFromTiles = (coor, length) => {
+  //console.log("remove");
   const shipCoor = calculate(coor, length);
+  //console.log(shipCoor);
   for (let i = 0; i < shipCoor.length; i++) {
+    //console.log(i);
     // turn current [x,y] array into an id-string
     let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
     let currTile = document.getElementById(stringHelp);
-    currTile.removeEventListener("click", callEventProjection);
-    currTile.removeEventListener("mouseenter");
-    currTile.removeEventListener("mouseleave");
+    console.log(currTile);
+    currTile.removeEventListener("mouseenter", _screenGrid__WEBPACK_IMPORTED_MODULE_1__.eventProjection);
+    currTile.removeEventListener("mouseleave", _screenGrid__WEBPACK_IMPORTED_MODULE_1__.eventDeleteProjection);
+    currTile.removeEventListener("click", _screenGrid__WEBPACK_IMPORTED_MODULE_1__.eventPlaceShip);
   }
 };
 
@@ -641,7 +659,7 @@ const removeEventsFromTiles = (coor) => {
  * @returns array with all the coordinates the ship occupies
  */
 const calculate = function (startCoor, shipLength) {
-  console.log(startCoor);
+  //console.log(startCoor);
   // array that contains all the coordinates the ship occupies
   const shipCoor = [];
   // calculate endpoint of ship that player wants to place
@@ -659,6 +677,7 @@ const calculate = function (startCoor, shipLength) {
       let currCoor = [startCoor[0] + i, startCoor[1]];
       shipCoor.push(currCoor);
     }
+    //console.log("x");
     return shipCoor;
   } else if (_index__WEBPACK_IMPORTED_MODULE_0__.playerBoard.placingDirection === "inY") {
     // calculate all coordinates that ship will occupy in Y-direction
@@ -666,6 +685,8 @@ const calculate = function (startCoor, shipLength) {
       let currCoor = [startCoor[0], startCoor[1] + i];
       shipCoor.push(currCoor);
     }
+    console.log("shipCoor");
+    console.log(shipCoor);
     return shipCoor;
   }
 };
@@ -1045,7 +1066,10 @@ const playerBoard = new _gameboard__WEBPACK_IMPORTED_MODULE_3__["default"]("play
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "eventDeleteProjection": () => (/* binding */ eventDeleteProjection),
+/* harmony export */   "eventPlaceShip": () => (/* binding */ eventPlaceShip),
+/* harmony export */   "eventProjection": () => (/* binding */ eventProjection),
+/* harmony export */   "grid": () => (/* binding */ grid)
 /* harmony export */ });
 /* harmony import */ var _domHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./domHelper */ "./src/domHelper.js");
 /* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index */ "./src/index.js");
@@ -1066,39 +1090,48 @@ const grid = () => {
       let currTile = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtTile)(".grid-container", "div", `x:${j}y:${k}`, "tile");
 
       // create projection of ship
-      currTile.addEventListener("mouseenter", callEventProjection);
+      currTile.addEventListener("mouseenter", eventProjection);
 
       // delete projection of ship
-      currTile.addEventListener("mouseleave", (event) => {
-        // console.log(event.target.id);
-        // get coordinates mouse is hovering over from the tile's id
-        // turn the string into an array [x,y]
-        const currCoor = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.getCoor)(event.target.id);
-        // calculate the coordinates of the tiles the ship is going to occupy
-        const shipCoor = _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.calculate(
-          currCoor,
-          _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.availableShips[0].length
-        );
-        (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.deleteProjection)(shipCoor);
-      });
+      currTile.addEventListener("mouseleave", eventDeleteProjection);
 
       // place ship by clicking
-      currTile.addEventListener("click", (event) => {
-        //console.log(event.target);
-        const currCoor = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.getCoor)(event.target.id);
-        // mark ships on dom
-        (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.placeShipOnBoard)(currCoor, _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.availableShips[0].length);
-        // place ship in gameboard object
-        _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.placeShips(currCoor);
-        //
-        console.log(event.target);
-        removeEventsFromTiles();
-      });
+      currTile.addEventListener("click", eventPlaceShip);
     }
   }
 };
 
-function callEventProjection(e) {
+function eventPlaceShip(e) {
+  //console.log(event.target);
+  const currCoor = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.getCoor)(e.target.id);
+  // mark ships on dom
+  (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.placeShipOnBoard)(currCoor, _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.availableShips[0].length);
+
+  // save length of current ship before it gets deleted from available ships
+  //array
+  let currLengthShip = _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.availableShips[0].length;
+
+  // place ship in gameboard object
+  _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.placeShips(currCoor);
+  //
+  //console.log(e.target);
+  (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.removeEventsFromTiles)(currCoor, currLengthShip);
+}
+
+function eventDeleteProjection(e) {
+  // console.log(event.target.id);
+  // get coordinates mouse is hovering over from the tile's id
+  // turn the string into an array [x,y]
+  const currCoor = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.getCoor)(e.target.id);
+  // calculate the coordinates of the tiles the ship is going to occupy
+  const shipCoor = _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.calculate(
+    currCoor,
+    _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.availableShips[0].length
+  );
+  (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.deleteProjection)(shipCoor);
+}
+
+function eventProjection(e) {
   // get coordinates mouse is hovering over from the tile's id
   // turn the string into an array [x,y]
   const currCoor = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.getCoor)(e.target.id);
@@ -1115,7 +1148,7 @@ function callEventProjection(e) {
   (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.projectingShip)(shipCoor);
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (grid);
+
 
 
 /***/ }),
@@ -1150,7 +1183,7 @@ const screenPlacing = () => {
   const contentContainer = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.crtNode)("#body", "div", "content");
   // create placing grid
   //   const placingGrid = crtNode(".content", "div", "placing-grid");
-  (0,_screenGrid__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  (0,_screenGrid__WEBPACK_IMPORTED_MODULE_4__.grid)();
 
   // create sidebar and display all available ships
   (0,_screenSidebar__WEBPACK_IMPORTED_MODULE_3__["default"])();
@@ -1412,4 +1445,4 @@ function Ship(length, name) {
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=bundle2ef9a31489fc9f4d0693.js.map
+//# sourceMappingURL=bundle731915b9925f7c1d03c0.js.map

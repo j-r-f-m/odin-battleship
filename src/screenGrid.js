@@ -5,6 +5,7 @@ import {
   projectingShip,
   deleteProjection,
   placeShipOnBoard,
+  removeEventsFromTiles,
 } from "./domHelper";
 import { playerBoard } from "./index";
 
@@ -22,39 +23,48 @@ const grid = () => {
       let currTile = crtTile(".grid-container", "div", `x:${j}y:${k}`, "tile");
 
       // create projection of ship
-      currTile.addEventListener("mouseenter", callEventProjection);
+      currTile.addEventListener("mouseenter", eventProjection);
 
       // delete projection of ship
-      currTile.addEventListener("mouseleave", (event) => {
-        // console.log(event.target.id);
-        // get coordinates mouse is hovering over from the tile's id
-        // turn the string into an array [x,y]
-        const currCoor = getCoor(event.target.id);
-        // calculate the coordinates of the tiles the ship is going to occupy
-        const shipCoor = playerBoard.calculate(
-          currCoor,
-          playerBoard.availableShips[0].length
-        );
-        deleteProjection(shipCoor);
-      });
+      currTile.addEventListener("mouseleave", eventDeleteProjection);
 
       // place ship by clicking
-      currTile.addEventListener("click", (event) => {
-        //console.log(event.target);
-        const currCoor = getCoor(event.target.id);
-        // mark ships on dom
-        placeShipOnBoard(currCoor, playerBoard.availableShips[0].length);
-        // place ship in gameboard object
-        playerBoard.placeShips(currCoor);
-        //
-        console.log(event.target);
-        removeEventsFromTiles();
-      });
+      currTile.addEventListener("click", eventPlaceShip);
     }
   }
 };
 
-function callEventProjection(e) {
+function eventPlaceShip(e) {
+  //console.log(event.target);
+  const currCoor = getCoor(e.target.id);
+  // mark ships on dom
+  placeShipOnBoard(currCoor, playerBoard.availableShips[0].length);
+
+  // save length of current ship before it gets deleted from available ships
+  //array
+  let currLengthShip = playerBoard.availableShips[0].length;
+
+  // place ship in gameboard object
+  playerBoard.placeShips(currCoor);
+  //
+  //console.log(e.target);
+  removeEventsFromTiles(currCoor, currLengthShip);
+}
+
+function eventDeleteProjection(e) {
+  // console.log(event.target.id);
+  // get coordinates mouse is hovering over from the tile's id
+  // turn the string into an array [x,y]
+  const currCoor = getCoor(e.target.id);
+  // calculate the coordinates of the tiles the ship is going to occupy
+  const shipCoor = playerBoard.calculate(
+    currCoor,
+    playerBoard.availableShips[0].length
+  );
+  deleteProjection(shipCoor);
+}
+
+function eventProjection(e) {
   // get coordinates mouse is hovering over from the tile's id
   // turn the string into an array [x,y]
   const currCoor = getCoor(e.target.id);
@@ -71,4 +81,4 @@ function callEventProjection(e) {
   projectingShip(shipCoor);
 }
 
-export default grid;
+export { grid, eventProjection, eventDeleteProjection, eventPlaceShip };
