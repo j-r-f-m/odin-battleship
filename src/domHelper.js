@@ -62,12 +62,19 @@ const getCoor = (string) => {
  * @param {array} shipCoor array with x-y-coordinates of possible ship location
  */
 const projectingShip = (shipCoor) => {
+  // ship coordinates containing illegal moves -> moves outside of board
+  if (shipCoor === false) {
+    //console.log(false);
+    return;
+  }
+
   for (let i = 0; i < shipCoor.length; i++) {
+    //console.log("loop");
     // turn current [x,y] array into a string containing the coordinates
     let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
     // give tile id with created string
     let currTile = document.getElementById(stringHelp);
-    console.log(currTile.classList);
+    // console.log(currTile.classList);
     if (currTile.classList.contains("ship")) {
       //
     } else {
@@ -89,25 +96,73 @@ const deleteProjection = (shipCoor) => {
     let currTile = document.getElementById(stringHelp);
 
     if (currTile.classList.contains("ship")) {
+      // if tile is occupied by ship
     } else {
       currTile.style.backgroundColor = "lightblue";
     }
   }
 };
 
+/**
+ * marks ship on gameboard -> turn tile black
+ * @param {array} coor x-y-coordinates of starting pioint of ship
+ * @param {int} length of ship
+ */
 const placeShipOnBoard = (coor, length) => {
   // console.log(coor);
-  // calculate location of ship
+  // calculate all coordinates the ship will occupy
   const shipCoor = calculate(coor, length);
 
-  for (let i = 0; i < shipCoor.length; i++) {
-    // turn current [x,y] array into a string containing the coordinates
-    let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
-    let currTile = document.getElementById(stringHelp);
-    //
-    currTile.classList.add("ship");
-    currTile.style.backgroundColor = "black";
+  //console.log(shipCoor);
+  if (shipCoor === false) {
+    return;
+  } else {
+    for (let i = 0; i < shipCoor.length; i++) {
+      // turn current [x,y] array into a string containing the coordinates
+      let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
+      let currTile = document.getElementById(stringHelp);
+      // add ship class to prevent ships to be placed on the same tiles
+      currTile.classList.add("ship");
+      currTile.style.backgroundColor = "black";
+    }
   }
+};
+
+/**
+ *
+ * @param {array or false} coorShip x-y-coordinates ship will occupy or false
+ * if placement is illegal
+ * @returns true if placement is legal
+ */
+const checkCollision = function (currCoor, lengthShip) {
+  // array containing
+  let tilesArray = [];
+  const coorShip = calculate(currCoor, lengthShip);
+
+  console.log("colli");
+  if (coorShip === false) {
+    // if coordinates are not legal due to gameboard restriction
+    return false;
+  }
+
+  // get all tiles with the passed coordinates
+  for (let i = 0; i < coorShip.length; i++) {
+    let currTile = document.getElementById(
+      `x:${coorShip[i][0]}y:${coorShip[i][1]}`
+    );
+    // push tile into array
+    tilesArray.push(currTile);
+  }
+
+  // check array for tiles containing ship
+  for (let i = 0; i < coorShip.length; i++) {
+    if (tilesArray[i].classList.contains("ship")) {
+      // ship occupying tile
+      console.log("ship found");
+      return false;
+    }
+  }
+  return true;
 };
 
 const removeEventsFromTiles = (coor, length) => {
@@ -119,7 +174,7 @@ const removeEventsFromTiles = (coor, length) => {
     // turn current [x,y] array into an id-string
     let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
     let currTile = document.getElementById(stringHelp);
-    console.log(currTile);
+    //console.log(currTile);
     currTile.removeEventListener("mouseenter", eventProjection);
     currTile.removeEventListener("mouseleave", eventDeleteProjection);
     currTile.removeEventListener("click", eventPlaceShip);
@@ -162,8 +217,8 @@ const calculate = function (startCoor, shipLength) {
       let currCoor = [startCoor[0], startCoor[1] + i];
       shipCoor.push(currCoor);
     }
-    console.log("shipCoor");
-    console.log(shipCoor);
+    // console.log("shipCoor");
+    // console.log(shipCoor);
     return shipCoor;
   }
 };
@@ -176,4 +231,5 @@ export {
   deleteProjection,
   placeShipOnBoard,
   removeEventsFromTiles,
+  checkCollision,
 };

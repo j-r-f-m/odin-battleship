@@ -6,6 +6,7 @@ import {
   deleteProjection,
   placeShipOnBoard,
   removeEventsFromTiles,
+  checkCollision,
 } from "./domHelper";
 import { playerBoard } from "./index";
 
@@ -36,13 +37,20 @@ const grid = () => {
 
 function eventPlaceShip(e) {
   //console.log(event.target);
+  // get string that contains the coordinates of the tile the player clicked on
+  // clicked tile is the starting point of the
   const currCoor = getCoor(e.target.id);
-  // mark ships on dom
-  placeShipOnBoard(currCoor, playerBoard.availableShips[0].length);
 
   // save length of current ship before it gets deleted from available ships
-  //array
+  //array when using playerBoard.placeShips()
   let currLengthShip = playerBoard.availableShips[0].length;
+
+  const checkingCollision = checkCollision(currCoor, currLengthShip);
+  if (checkingCollision === false) {
+    return;
+  }
+  // mark ships on dom and call  playerBoard.placeShips(currCoor);
+  placeShipOnBoard(currCoor, playerBoard.availableShips[0].length);
 
   // place ship in gameboard object
   playerBoard.placeShips(currCoor);
@@ -65,6 +73,8 @@ function eventDeleteProjection(e) {
 }
 
 function eventProjection(e) {
+  // console.log("hovber");
+
   // get coordinates mouse is hovering over from the tile's id
   // turn the string into an array [x,y]
   const currCoor = getCoor(e.target.id);
@@ -75,6 +85,7 @@ function eventProjection(e) {
     currCoor,
     playerBoard.availableShips[0].length
   );
+
   // console.log(shipCoor);
   // change color of tiles the ship is going to occupy if player clicks
   // tile the mouse is hovering over

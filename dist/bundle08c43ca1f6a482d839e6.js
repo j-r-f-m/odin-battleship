@@ -515,6 +515,7 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "checkCollision": () => (/* binding */ checkCollision),
 /* harmony export */   "crtNode": () => (/* binding */ crtNode),
 /* harmony export */   "crtTile": () => (/* binding */ crtTile),
 /* harmony export */   "deleteProjection": () => (/* binding */ deleteProjection),
@@ -585,12 +586,19 @@ const getCoor = (string) => {
  * @param {array} shipCoor array with x-y-coordinates of possible ship location
  */
 const projectingShip = (shipCoor) => {
+  // ship coordinates containing illegal moves -> moves outside of board
+  if (shipCoor === false) {
+    //console.log(false);
+    return;
+  }
+
   for (let i = 0; i < shipCoor.length; i++) {
+    //console.log("loop");
     // turn current [x,y] array into a string containing the coordinates
     let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
     // give tile id with created string
     let currTile = document.getElementById(stringHelp);
-    console.log(currTile.classList);
+    // console.log(currTile.classList);
     if (currTile.classList.contains("ship")) {
       //
     } else {
@@ -612,25 +620,73 @@ const deleteProjection = (shipCoor) => {
     let currTile = document.getElementById(stringHelp);
 
     if (currTile.classList.contains("ship")) {
+      // if tile is occupied by ship
     } else {
       currTile.style.backgroundColor = "lightblue";
     }
   }
 };
 
+/**
+ * marks ship on gameboard -> turn tile black
+ * @param {array} coor x-y-coordinates of starting pioint of ship
+ * @param {int} length of ship
+ */
 const placeShipOnBoard = (coor, length) => {
   // console.log(coor);
-  // calculate location of ship
+  // calculate all coordinates the ship will occupy
   const shipCoor = calculate(coor, length);
 
-  for (let i = 0; i < shipCoor.length; i++) {
-    // turn current [x,y] array into a string containing the coordinates
-    let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
-    let currTile = document.getElementById(stringHelp);
-    //
-    currTile.classList.add("ship");
-    currTile.style.backgroundColor = "black";
+  //console.log(shipCoor);
+  if (shipCoor === false) {
+    return;
+  } else {
+    for (let i = 0; i < shipCoor.length; i++) {
+      // turn current [x,y] array into a string containing the coordinates
+      let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
+      let currTile = document.getElementById(stringHelp);
+      // add ship class to prevent ships to be placed on the same tiles
+      currTile.classList.add("ship");
+      currTile.style.backgroundColor = "black";
+    }
   }
+};
+
+/**
+ *
+ * @param {array or false} coorShip x-y-coordinates ship will occupy or false
+ * if placement is illegal
+ * @returns true if placement is legal
+ */
+const checkCollision = function (currCoor, lengthShip) {
+  // array containing
+  let tilesArray = [];
+  const coorShip = calculate(currCoor, lengthShip);
+
+  console.log("colli");
+  if (coorShip === false) {
+    // if coordinates are not legal due to gameboard restriction
+    return false;
+  }
+
+  // get all tiles with the passed coordinates
+  for (let i = 0; i < coorShip.length; i++) {
+    let currTile = document.getElementById(
+      `x:${coorShip[i][0]}y:${coorShip[i][1]}`
+    );
+    // push tile into array
+    tilesArray.push(currTile);
+  }
+
+  // check array for tiles containing ship
+  for (let i = 0; i < coorShip.length; i++) {
+    if (tilesArray[i].classList.contains("ship")) {
+      // ship occupying tile
+      console.log("ship found");
+      return false;
+    }
+  }
+  return true;
 };
 
 const removeEventsFromTiles = (coor, length) => {
@@ -642,7 +698,7 @@ const removeEventsFromTiles = (coor, length) => {
     // turn current [x,y] array into an id-string
     let stringHelp = `x:${shipCoor[i][0]}y:${shipCoor[i][1]}`;
     let currTile = document.getElementById(stringHelp);
-    console.log(currTile);
+    //console.log(currTile);
     currTile.removeEventListener("mouseenter", _screenGrid__WEBPACK_IMPORTED_MODULE_1__.eventProjection);
     currTile.removeEventListener("mouseleave", _screenGrid__WEBPACK_IMPORTED_MODULE_1__.eventDeleteProjection);
     currTile.removeEventListener("click", _screenGrid__WEBPACK_IMPORTED_MODULE_1__.eventPlaceShip);
@@ -685,8 +741,8 @@ const calculate = function (startCoor, shipLength) {
       let currCoor = [startCoor[0], startCoor[1] + i];
       shipCoor.push(currCoor);
     }
-    console.log("shipCoor");
-    console.log(shipCoor);
+    // console.log("shipCoor");
+    // console.log(shipCoor);
     return shipCoor;
   }
 };
@@ -737,6 +793,7 @@ function Gameboard(owner) {
    * return array with palced ships
    */
   this.placeShips = function (startCoor) {
+    // console.log("place ship");
     // create instance of ship
     let currShip = new _ships__WEBPACK_IMPORTED_MODULE_0__["default"](
       this.availableShips[0].length,
@@ -746,9 +803,11 @@ function Gameboard(owner) {
     /**
      * calculates the coordinates the ship occupies
      * if a player clicks on a starting point that would place parts of the ship
-     * outside of the board calculate() returns a string
+     * outside of the board calculate() returns a false
      */
     currShip.coordinates = this.calculate(startCoor, currShip.length);
+    // check for collision
+
     // if ship placement is legal place ship and return array with all placed ships
     // if ship placement is illegal reutrn false
     if (currShip.coordinates !== false) {
@@ -771,10 +830,10 @@ function Gameboard(owner) {
     // array that contains all the coordinates the ship occupies
     const shipCoor = [];
     // calculate endpoint of ship that player wants to place
-    // check of all parts of the ship will be on the board
+    // check if all parts of the ship will be on the board
     const endPointX = startCoor[0] + shipLength - 1;
     const endPointY = startCoor[1] + shipLength - 1;
-    // check for illegal moves
+    // check for illegal moves -> part of ship outside of board
     if (this.placingDirection === "inX" && endPointX > 9) {
       return false;
     } else if (this.placingDirection === "inY" && endPointY > 9) {
@@ -1103,13 +1162,20 @@ const grid = () => {
 
 function eventPlaceShip(e) {
   //console.log(event.target);
+  // get string that contains the coordinates of the tile the player clicked on
+  // clicked tile is the starting point of the
   const currCoor = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.getCoor)(e.target.id);
-  // mark ships on dom
-  (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.placeShipOnBoard)(currCoor, _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.availableShips[0].length);
 
   // save length of current ship before it gets deleted from available ships
-  //array
+  //array when using playerBoard.placeShips()
   let currLengthShip = _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.availableShips[0].length;
+
+  const checkingCollision = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.checkCollision)(currCoor, currLengthShip);
+  if (checkingCollision === false) {
+    return;
+  }
+  // mark ships on dom and call  playerBoard.placeShips(currCoor);
+  (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.placeShipOnBoard)(currCoor, _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.availableShips[0].length);
 
   // place ship in gameboard object
   _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.placeShips(currCoor);
@@ -1132,6 +1198,8 @@ function eventDeleteProjection(e) {
 }
 
 function eventProjection(e) {
+  // console.log("hovber");
+
   // get coordinates mouse is hovering over from the tile's id
   // turn the string into an array [x,y]
   const currCoor = (0,_domHelper__WEBPACK_IMPORTED_MODULE_0__.getCoor)(e.target.id);
@@ -1142,6 +1210,7 @@ function eventProjection(e) {
     currCoor,
     _index__WEBPACK_IMPORTED_MODULE_1__.playerBoard.availableShips[0].length
   );
+
   // console.log(shipCoor);
   // change color of tiles the ship is going to occupy if player clicks
   // tile the mouse is hovering over
@@ -1445,4 +1514,4 @@ function Ship(length, name) {
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=bundle731915b9925f7c1d03c0.js.map
+//# sourceMappingURL=bundle08c43ca1f6a482d839e6.js.map

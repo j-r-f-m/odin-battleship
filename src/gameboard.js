@@ -28,6 +28,7 @@ function Gameboard(owner) {
    * return array with palced ships
    */
   this.placeShips = function (startCoor) {
+    // console.log("place ship");
     // create instance of ship
     let currShip = new Ship(
       this.availableShips[0].length,
@@ -37,9 +38,11 @@ function Gameboard(owner) {
     /**
      * calculates the coordinates the ship occupies
      * if a player clicks on a starting point that would place parts of the ship
-     * outside of the board calculate() returns a string
+     * outside of the board calculate() returns a false
      */
     currShip.coordinates = this.calculate(startCoor, currShip.length);
+    // check for collision
+
     // if ship placement is legal place ship and return array with all placed ships
     // if ship placement is illegal reutrn false
     if (currShip.coordinates !== false) {
@@ -62,10 +65,10 @@ function Gameboard(owner) {
     // array that contains all the coordinates the ship occupies
     const shipCoor = [];
     // calculate endpoint of ship that player wants to place
-    // check of all parts of the ship will be on the board
+    // check if all parts of the ship will be on the board
     const endPointX = startCoor[0] + shipLength - 1;
     const endPointY = startCoor[1] + shipLength - 1;
-    // check for illegal moves
+    // check for illegal moves -> part of ship outside of board
     if (this.placingDirection === "inX" && endPointX > 9) {
       return false;
     } else if (this.placingDirection === "inY" && endPointY > 9) {
