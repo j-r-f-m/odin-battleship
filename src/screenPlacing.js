@@ -3,6 +3,7 @@ import Gameboard from "./gameboard";
 import { playerBoard } from "./index";
 import crtSidebar from "./screenSidebar";
 import { grid } from "./screenGrid";
+import screenGameplay from "./screenGameplay";
 
 /**
  * GAME PHASE
@@ -36,7 +37,7 @@ const screenPlacing = () => {
   resetBtn.addEventListener("click", () => {
     //cons
     playerBoard.resetGameboard();
-    // delete start screen
+    // delete placing screen
     contentContainer.remove();
     // create placing screen
     screenPlacing();
@@ -45,6 +46,15 @@ const screenPlacing = () => {
   // create start game button
   const startGame = crtNode(".content", "button", "btn-start-game");
   startGame.textContent = "Start Game";
+
+  startGame.addEventListener("click", () => {
+    if (playerBoard.placedShips.length === 5) {
+      // delete placing screen
+      contentContainer.remove();
+      // create gameplay screen
+      screenGameplay();
+    }
+  });
 };
 
 export default screenPlacing;

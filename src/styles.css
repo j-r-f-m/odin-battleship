@@ -130,10 +130,20 @@ table {
 /* -------------------------------------------------------------------------- */
 
 /* ---------------------------- layout -------------------------------------- */
+
+/* layout for placing phase */
 .content {
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(12, [col-start]1fr);
+  grid-template-rows: repeat(12, [row-start] 1fr);
+}
+
+/* layout for gameplay phase */
+.content-gameplay {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(15, [col-start]1fr);
   grid-template-rows: repeat(12, [row-start] 1fr);
 }
 
@@ -188,7 +198,54 @@ table {
   border: 5px solid lightgray;
 }
 
-.tile {
+.grid-container-player {
+  grid-column: 2 / 8;
+  grid-row: 3 / 9;
+
+  display: grid;
+  grid-template-columns: repeat(10, [col-start]1fr);
+  grid-template-rows: repeat(10, [row-start] 1fr);
+
+  column-gap: 5px;
+  row-gap: 5px;
+
+  background-color: lightgrey;
+  border: 5px solid lightgray;
+}
+
+.grid-container-player {
+  grid-column: 2 / 8;
+  grid-row: 4 / 10;
+
+  display: grid;
+  grid-template-columns: repeat(10, [col-start]1fr);
+  grid-template-rows: repeat(10, [row-start] 1fr);
+
+  column-gap: 5px;
+  row-gap: 5px;
+
+  background-color: lightgrey;
+  border: 5px solid lightgray;
+}
+
+.grid-container-ai {
+  grid-column: 9 / 15;
+  grid-row: 4 / 10;
+
+  display: grid;
+  grid-template-columns: repeat(10, [col-start]1fr);
+  grid-template-rows: repeat(10, [row-start] 1fr);
+
+  column-gap: 5px;
+  row-gap: 5px;
+
+  background-color: lightgrey;
+  border: 5px solid lightgray;
+}
+
+.tile,
+.tile-player,
+.tile-ai {
   background-color: lightblue;
 }
 
@@ -342,3 +399,25 @@ table {
 }
 
 /* ------------------------------- playing screen --------------------------- */
+
+.player-name-plate {
+  grid-column: 3 / 7;
+  grid-row: 2 / 3;
+
+  background-color: lightgrey;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai-name-plate {
+  grid-column: 10 / 14;
+  grid-row: 2 / 3;
+
+  background-color: lightgrey;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
