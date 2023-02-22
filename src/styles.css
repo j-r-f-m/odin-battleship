@@ -315,6 +315,28 @@ table {
   background-color: lightgray;
 }
 
+.btn-reset {
+  grid-column: 5 / 8;
+  grid-row: 11 / 12;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: lightgray;
+}
+
+.btn-start-game {
+  grid-column: 9 / 12;
+  grid-row: 11 / 12;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: lightgray;
+}
+
 .ship {
   background-color: black;
 }

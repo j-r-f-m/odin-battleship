@@ -5,7 +5,9 @@ import crtSidebar from "./screenSidebar";
 import { grid } from "./screenGrid";
 
 /**
+ * GAME PHASE
  * create placing screen
+ * player is supposed to palce his ships during this phase of the game
  */
 const screenPlacing = () => {
   console.log(playerBoard);
@@ -18,7 +20,7 @@ const screenPlacing = () => {
   // create sidebar and display all available ships
   crtSidebar();
 
-  // create button
+  // create rotate button
   const rotateBtn = crtNode(".content", "button", "btn-rotate");
   rotateBtn.textContent = "Rotate Ship";
 
@@ -26,6 +28,23 @@ const screenPlacing = () => {
     playerBoard.changePlacingDirection();
     console.log(playerBoard);
   });
+
+  // create reset button
+  const resetBtn = crtNode(".content", "button", "btn-reset");
+  resetBtn.textContent = "Reset";
+
+  resetBtn.addEventListener("click", () => {
+    //cons
+    playerBoard.resetGameboard();
+    // delete start screen
+    contentContainer.remove();
+    // create placing screen
+    screenPlacing();
+  });
+
+  // create start game button
+  const startGame = crtNode(".content", "button", "btn-start-game");
+  startGame.textContent = "Start Game";
 };
 
 export default screenPlacing;

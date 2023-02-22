@@ -168,6 +168,21 @@ function Gameboard(owner) {
     }
     console.log("rotateShip");
   };
+
+  /**
+   * reset Gameboard so palyer can replace his ships
+   */
+  this.resetGameboard = function () {
+    this.availableShips = [
+      { name: "Patrol Boat", length: 2, direction: "inX" },
+      { name: "Cruiser1", length: 3, direction: "inX" },
+      { name: "Cruiser2", length: 3, direction: "inX" },
+      { name: "Battleship", length: 4, direction: "inX" },
+      { name: "Carrier", length: 5, direction: "inX" },
+    ];
+    this.placedShips.length = 0;
+    this.placingDirection = "inX";
+  };
 }
 
 export default Gameboard;

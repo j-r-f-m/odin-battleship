@@ -7,6 +7,7 @@ import {
   placeShipOnBoard,
   removeEventsFromTiles,
   checkCollision,
+  deletAllEvents,
 } from "./domHelper";
 import { playerBoard } from "./index";
 
@@ -57,6 +58,12 @@ function eventPlaceShip(e) {
   //
   //console.log(e.target);
   removeEventsFromTiles(currCoor, currLengthShip);
+
+  const lengthAvailableShip = playerBoard.availableShips.length;
+
+  console.log(lengthAvailableShip);
+  // if all ships are placed remove all eventlisteners
+  deletAllEvents(lengthAvailableShip);
 }
 
 function eventDeleteProjection(e) {

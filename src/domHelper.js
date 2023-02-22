@@ -165,6 +165,11 @@ const checkCollision = function (currCoor, lengthShip) {
   return true;
 };
 
+/**
+ * remove enventlisteners from tiles that are occupied by a ship
+ * @param {array} coor starting coordinates for ship
+ * @param {int} length of ship
+ */
 const removeEventsFromTiles = (coor, length) => {
   //console.log("remove");
   const shipCoor = calculate(coor, length);
@@ -223,6 +228,24 @@ const calculate = function (startCoor, shipLength) {
   }
 };
 
+/**
+ * check if all shipt are placed
+ * if all ships are placed remove all eventlisteners
+ * @param {int} lenghtSipArr length of availableShipsArray
+ */
+const deletAllEvents = (lenghtSipArr) => {
+  //
+  if (lenghtSipArr === 0) {
+    const parent = document.getElementsByClassName("grid-container");
+
+    for (const child of parent[0].children) {
+      child.removeEventListener("mouseenter", eventProjection);
+      child.removeEventListener("mouseleave", eventDeleteProjection);
+      child.removeEventListener("click", eventPlaceShip);
+    }
+  }
+};
+
 export {
   crtNode,
   crtTile,
@@ -232,4 +255,5 @@ export {
   placeShipOnBoard,
   removeEventsFromTiles,
   checkCollision,
+  deletAllEvents,
 };
