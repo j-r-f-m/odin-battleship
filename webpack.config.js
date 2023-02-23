@@ -26,7 +26,7 @@ module.exports = {
       directory: path.resolve(__dirname, "dist"),
     },
     // set port
-    port: 3000,
+    port: 5000,
     // open browser automatically
     open: true,
     hot: true,

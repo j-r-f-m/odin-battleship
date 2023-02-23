@@ -195,20 +195,82 @@ function Gameboard(owner) {
     return directionArr[ranNumber];
   };
 
+  /**
+   *
+   * @param {int} max upper border
+   * @returns int between 0 and max excluding max
+   */
+  this.getRandomInt = function (max) {
+    return Math.floor(Math.random() * max);
+  };
+
   this.randomShips = function () {
     let initDirection = this.randomDirection();
     // create random number between 0 and 10 excluding 10
-    let initRandX = Math.floor(Math.random() * 10);
-    let initRandY = Math.floor(Math.random() * 10);
+    let initRandX = this.getRandomInt(10);
+    let initRandY = this.getRandomInt(10);
     console.log(initRandX);
     console.log(initRandY);
     // create patrol boat
     let shipStr = this.randomPatrolBoat(initRandX, initRandY, initDirection);
     console.log(shipStr);
 
-    while (shipStr !== 68) {
+    while (shipStr.length !== 4) {
       // create randomd irection
-      let randomDirection = this.randomDirection();
+      let direction = this.randomDirection();
+      let randX = this.getRandomInt(10);
+      let randY = this.getRandomInt(10);
+
+      // make sure ship stay on board by calculating endpoint
+
+      // create cruiser 1
+      if (shipStr.length === 8) {
+        let currStr1 = "";
+        let currStr2 = "";
+        let currStr3 = "";
+        if (direction === "inX") {
+          currStr1 = `x${randX}y${randY}`;
+          if (shipStr.includes(currStr1)) {
+            continue;
+          }
+
+          currStr2 = `x${randX + 1}y${randY}`;
+          if (shipStr.includes(currStr2)) {
+            continue;
+          }
+
+          currStr3 = `x${randX + 2}y${randY}`;
+          if (shipStr.includes(currStr3)) {
+            continue;
+          }
+
+          let combinedString = currStr1 + currStr2 + currStr3;
+          shipStr += combinedString;
+          console.log(shipStr);
+        }
+        if (direction === "inY") {
+          currStr1 = `x${randX}y${randY}`;
+          if (shipStr.includes(currStr1)) {
+            continue;
+          }
+
+          currStr2 = `x${randX}y${randY + 1}`;
+          if (shipStr.includes(currStr2)) {
+            continue;
+          }
+
+          currStr3 = `x${randX}y${randY + 2}`;
+          if (shipStr.includes(currStr3)) {
+            continue;
+          }
+
+          let combinedString = currStr1 + currStr2 + currStr3;
+          shipStr += combinedString;
+          console.log(shipStr);
+        }
+      }
+
+      shipStr = "1234";
     }
   };
 
