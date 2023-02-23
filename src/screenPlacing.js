@@ -11,7 +11,7 @@ import screenGameplay from "./screenGameplay";
  * player is supposed to palce his ships during this phase of the game
  */
 const screenPlacing = () => {
-  console.log(playerBoard);
+  // console.log(playerBoard);
   // create content container
   const contentContainer = crtNode("#body", "div", "content");
   // create placing grid

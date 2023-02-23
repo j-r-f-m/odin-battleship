@@ -61,7 +61,7 @@ function eventPlaceShip(e) {
 
   const lengthAvailableShip = playerBoard.availableShips.length;
 
-  console.log(lengthAvailableShip);
+  // console.log(lengthAvailableShip);
   // if all ships are placed remove all eventlisteners
   deletAllEvents(lengthAvailableShip);
 }
