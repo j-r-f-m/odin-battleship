@@ -374,3 +374,11 @@ test.skip("delete ship from placedShip array", () => {
     },
   ]);
 });
+
+/* ----------------------------- TESTING randomShipPlacement() ---------------*/
+
+let ggameBoard = new Gameboard();
+
+test.skip("test random number between 0 and 10 ", () => {
+  expect(ggameBoard.randomShips()).toBeLessThan(10);
+});

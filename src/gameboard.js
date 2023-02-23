@@ -184,11 +184,47 @@ function Gameboard(owner) {
     this.placingDirection = "inX";
   };
 
+  /**
+   *create a random direction
+   * @returns "inX" or "inY"
+   */
   this.randomDirection = function () {
     let directionArr = ["inX", "inY"];
     let ranNumber = Math.floor(Math.random() * 2);
 
     return directionArr[ranNumber];
+  };
+
+  this.randomShips = function () {
+    let initDirection = this.randomDirection();
+    // create random number between 0 and 10 excluding 10
+    let initRandX = Math.floor(Math.random() * 10);
+    let initRandY = Math.floor(Math.random() * 10);
+    console.log(initRandX);
+    console.log(initRandY);
+    // create patrol boat
+    let shipStr = this.randomPatrolBoat(initRandX, initRandY, initDirection);
+    console.log(shipStr);
+
+    while (shipStr !== 68) {
+      // create randomd irection
+      let randomDirection = this.randomDirection();
+    }
+  };
+
+  /**
+   * create a string containing the coordinates of a patrol boat
+   * @param {int} coorX x-coordinate
+   * @param {int} coorY y-coordinate
+   * @param {str} direction "inY" or "inX"
+   * @returns string containing coordinates of patrol boat
+   */
+  this.randomPatrolBoat = function (coorX, coorY, direction) {
+    if (direction === "inX") {
+      return `x${coorX}y${coorY}x${coorX + 1}y${coorY}`;
+    } else if (direction === "inY") {
+      return `x${coorX}y${coorY}x${coorX}y${coorY + 1}`;
+    }
   };
 }
 
@@ -198,4 +234,4 @@ export default Gameboard;
 
 let ggameBoard = new Gameboard();
 console.log(ggameBoard);
-console.log(ggameBoard.randomDirection());
+ggameBoard.randomShips();
