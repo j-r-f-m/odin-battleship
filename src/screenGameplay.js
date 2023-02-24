@@ -1,4 +1,4 @@
-import { playerBoard } from ".";
+import { playerBoard, aiBoard } from ".";
 import { crtNode, crtTile } from "./domHelper";
 
 /**
@@ -16,6 +16,7 @@ import { crtNode, crtTile } from "./domHelper";
  */
 const screenGameplay = () => {
   console.log(playerBoard);
+  console.log(aiBoard);
 
   // create content container
   const contentContainer = crtNode("#body", "div", "content-gameplay");
@@ -73,12 +74,12 @@ const createTiles = (nameOwner) => {
 
 const placeShipsDom = () => {
   const placedShipsArr = playerBoard.placedShips;
-  console.log(placedShipsArr);
+  // console.log(placedShipsArr);
   for (let i = 0; i < placedShipsArr.length; i++) {
     const currShipArr = playerBoard.placedShips[i].coordinates;
-    console.log(playerBoard.placedShips[i].coordinates);
+    // console.log(playerBoard.placedShips[i].coordinates);
     for (let j = 0; j < currShipArr.length; j++) {
-      console.log(playerBoard.placedShips[i].coordinates[j]);
+      // console.log(playerBoard.placedShips[i].coordinates[j]);
 
       let stringHelp = `x:${currShipArr[j][0]}y:${currShipArr[j][1]}`;
       let currTile = document.getElementById(stringHelp);

@@ -377,8 +377,46 @@ test.skip("delete ship from placedShip array", () => {
 
 /* ----------------------------- TESTING randomShipPlacement() ---------------*/
 
-let ggameBoard = new Gameboard();
+let ggameBoard = new Gameboard("ai");
 
-test.skip("test random number between 0 and 10 ", () => {
-  expect(ggameBoard.randomShips()).toBeLessThan(10);
+test.skip("ai placedship array ", () => {
+  expect(ggameBoard.aiShipPlacement()).toMatchObject({
+    coordinates: [
+      [6, 0],
+      [6, 1],
+    ],
+  });
+});
+
+let pstArr = ggameBoard.aiShipPlacement();
+
+test("test patrol boat in globalArr[0][0]", () => {
+  expect(pstArr[0][0]).toMatchObject({
+    coordinates: [
+      [6, 0],
+      [6, 1],
+    ],
+  });
+});
+
+test("test cruiser in globalArr[0][1]", () => {
+  expect(pstArr[0][1]).toMatchObject({
+    coordinates: [
+      [1, 5],
+      [2, 5],
+      [3, 5],
+    ],
+  });
+});
+
+test("test carrier in globalArr[1][4]", () => {
+  expect(pstArr[1][4]).toMatchObject({
+    coordinates: [
+      [8, 5],
+      [8, 6],
+      [8, 7],
+      [8, 8],
+      [8, 9],
+    ],
+  });
 });

@@ -7,11 +7,14 @@ import screenGameplay from "./screenGameplay";
 // --------------------- initilize objects --------------------------
 // create gameboard for player
 const playerBoard = new Gameboard("player");
-
+const aiBoard = new Gameboard("ai");
+aiBoard.availableShips.length = 0;
+aiBoard.placedShips = aiBoard.aiShipPlacement();
+// console.log(aiBoard.availableShips);
 //screenStart();
 screenPlacing();
-// screenGameplay();
+//screenGameplay();
 
 // create ship objects for placement
 
-export { playerBoard };
+export { playerBoard, aiBoard };

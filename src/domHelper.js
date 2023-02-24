@@ -139,7 +139,6 @@ const checkCollision = function (currCoor, lengthShip) {
   let tilesArray = [];
   const coorShip = calculate(currCoor, lengthShip);
 
-  console.log("colli");
   if (coorShip === false) {
     // if coordinates are not legal due to gameboard restriction
     return false;
