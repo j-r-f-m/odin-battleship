@@ -12,8 +12,8 @@ aiBoard.availableShips.length = 0;
 aiBoard.placedShips = aiBoard.aiShipPlacement();
 // console.log(aiBoard.availableShips);
 //screenStart();
-screenPlacing();
-//screenGameplay();
+// screenPlacing();
+screenGameplay();
 
 // create ship objects for placement
 

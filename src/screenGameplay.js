@@ -1,5 +1,5 @@
 import { playerBoard, aiBoard } from ".";
-import { crtNode, crtTile } from "./domHelper";
+import { crtNode, crtTile, crtTileGame } from "./domHelper";
 
 /**
  * create screen for gamepaly
@@ -33,46 +33,93 @@ const screenGameplay = () => {
     "player-name-plate"
   );
   playerNamePlate.textContent = "Player";
-  createTiles("player");
-  placeShipsDom();
+  createTilesPlayer("player", 1);
+  placeShipsDomPlayer();
 
   // create ai interface
   const playerAi = crtNode(".content-gameplay", "div", "grid-container-ai");
   const aiNamePlate = crtNode(".content-gameplay", "div", "ai-name-plate");
   aiNamePlate.textContent = "A.I.";
-  createTiles("ai");
+  createTilesAi("ai", 2);
+  placeShipsDomAi();
 };
 
 /**
- * create tiles for the grid of the player or the ai
- * pass player or ai
+ * create tiles for the grid of  the ai
+ * pass owner und correesponfing number
  * @param {string} nameOwner name of owner of tiles -> player or tile
  */
-const createTiles = (nameOwner) => {
+const createTilesPlayer = (nameOwner, numOwner) => {
   // create a 10x10 x-y-grid using two loops to calculate the coordinates for
   // each tile
   for (let j = 0; j < 10; j++) {
     for (let k = 0; k < 10; k++) {
-      let currTile = crtTile(
+      let currTile = crtTileGame(
         `.grid-container-${nameOwner}`,
         "div",
-        `x:${j}y:${k}`,
+        `x${numOwner}:${j}y${numOwner}:${k}`,
         `tile-${nameOwner}`
       );
-
-      //   // create projection of ship
-      //   currTile.addEventListener("mouseenter", eventProjection);
-
-      //   // delete projection of ship
-      //   currTile.addEventListener("mouseleave", eventDeleteProjection);
-
-      //   // place ship by clicking
-      //   currTile.addEventListener("click", eventPlaceShip);
     }
   }
 };
 
-const placeShipsDom = () => {
+/**
+ * create tiles for the grid of  the ai
+ * pass owner und correesponfing number
+ * @param {string} nameOwner name of owner of tiles -> player or tile
+ */
+const createTilesAi = (nameOwner, numOwner) => {
+  // create a 10x10 x-y-grid using two loops to calculate the coordinates for
+  // each tile
+  for (let j = 0; j < 10; j++) {
+    for (let k = 0; k < 10; k++) {
+      let currTile = crtTileGame(
+        `.grid-container-${nameOwner}`,
+        "div",
+        `x${numOwner}:${j}y${numOwner}:${k}`,
+        `tile-${nameOwner}`
+      );
+
+      // fireShot
+      currTile.addEventListener("click", fireShot);
+    }
+  }
+};
+
+function fireShot(e) {
+  // extract coordinates from string
+  let coorString = e.target.classList[0];
+
+  let winnerBtn = null;
+
+  let coorArr = [parseInt(coorString[3]), parseInt(coorString[7])];
+  console.log(coorArr);
+
+  // check if coordinate is occupied by a ship
+  let hit = aiBoard.receiveAttack(coorArr);
+  // console.log(hit);
+  if (hit === true) {
+    // mark hit on dom
+    e.target.style.backgroundColor = "red";
+  } else if (hit === false) {
+    // mark miss on dom
+    e.target.style.backgroundColor = "blue";
+  } else if (hit === "gameover player wins") {
+    console.log("gameover player wins");
+    e.target.style.backgroundColor = "red";
+    winnerBtn = crtNode(".content-gameplay", "div", "btn-winner");
+    winnerBtn.textContent = "YOU WON";
+    console.log(winnerBtn);
+  }
+  // remove eventlistener
+  e.target.removeEventListener("click", fireShot);
+}
+
+/**
+ *place ships of player in dom
+ */
+const placeShipsDomPlayer = () => {
   const placedShipsArr = playerBoard.placedShips;
   // console.log(placedShipsArr);
   for (let i = 0; i < placedShipsArr.length; i++) {
@@ -81,10 +128,32 @@ const placeShipsDom = () => {
     for (let j = 0; j < currShipArr.length; j++) {
       // console.log(playerBoard.placedShips[i].coordinates[j]);
 
-      let stringHelp = `x:${currShipArr[j][0]}y:${currShipArr[j][1]}`;
-      let currTile = document.getElementById(stringHelp);
-      currTile.classList.add("ship");
-      currTile.style.backgroundColor = "black";
+      let stringHelp = `x1:${currShipArr[j][0]}y1:${currShipArr[j][1]}`;
+      let currTile = document.getElementsByClassName(stringHelp);
+      currTile[0].classList.add("ship");
+      currTile[0].style.backgroundColor = "black";
+    }
+  }
+};
+
+/**
+ * place ships of ai in dom
+ */
+const placeShipsDomAi = () => {
+  const placedShipsArr = aiBoard.placedShips;
+  // console.log(placedShipsArr);
+  for (let i = 0; i < placedShipsArr.length; i++) {
+    const currShipArr = aiBoard.placedShips[i].coordinates;
+    // console.log(playerBoard.placedShips[i].coordinates);
+    for (let j = 0; j < currShipArr.length; j++) {
+      // console.log(playerBoard.placedShips[i].coordinates[j]);
+
+      let stringHelp = `x2:${currShipArr[j][0]}y2:${currShipArr[j][1]}`;
+      let currTile = document.getElementsByClassName(stringHelp);
+      currTile[0].classList.add("ship");
+      currTile[0].style.backgroundColor = "black";
+      // give tile name of ship
+      currTile[0].setAttribute("id", aiBoard.placedShips[i].name);
     }
   }
 };

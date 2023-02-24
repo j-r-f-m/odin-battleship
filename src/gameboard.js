@@ -128,6 +128,11 @@ function Gameboard(owner) {
     return this.placedShips;
   };
 
+  /**
+   *
+   * @param {array} targetCoor x- and y- coordinates of tile that user fired on
+   * @returns true or false depending if ship got hit
+   */
   this.receiveAttack = function (targetCoor) {
     // search all placed ships for matching coordinates
     let targetHit = this.searchShips(targetCoor);
@@ -137,12 +142,12 @@ function Gameboard(owner) {
       // mark tile in dom with an x
       // push coordinates that missed into an array
       this.shotsMissed.push(targetCoor);
-      return null;
+      return false;
     } else {
       // shot hit
       this.shotsHit.push(targetCoor);
       // mark tile in dom
-      console.log(targetHit.hit);
+
       targetHit.hit();
       targetHit.sunk();
       if (targetHit.isSunk === true) {
@@ -153,8 +158,9 @@ function Gameboard(owner) {
 
     if (this.placedShips.length === 0) {
       // end game
+      return "gameover player wins";
     }
-    return this.placedShips;
+    return true;
   };
 
   /**
@@ -184,6 +190,14 @@ function Gameboard(owner) {
     this.placingDirection = "inX";
   };
 
+  /**
+   * creat three arrays with 5 ship objects with hard coded coordinates
+   * and push them into an array
+   * randomly select one of the three arrays and return it
+   * the array is supposed to be saved to this.placedShips
+   * @returns array with 5 ship objects
+   */
+
   this.aiShipPlacement = function () {
     // array that will hold different placesShips array
     let globalArr = [];
@@ -198,6 +212,12 @@ function Gameboard(owner) {
     return globalArr[randNum];
   };
 
+  /** -----------------------Utility functions for shipplacement--------------- */
+
+  /**
+   * hardcoded ship placement 1
+   * @returns array with ship objects
+   */
   this.aiPlacedShips1 = function () {
     let shipsArr = [];
     let patrolBoat = new Ship(2, "Patrol Boat");
@@ -215,7 +235,7 @@ function Gameboard(owner) {
     ];
     shipsArr.push(cruiser1);
 
-    let cruiser2 = new Ship(3, "Cruiser1");
+    let cruiser2 = new Ship(3, "Cruiser2");
     cruiser2.coordinates = [
       [6, 7],
       [7, 7],
@@ -244,6 +264,10 @@ function Gameboard(owner) {
     return shipsArr;
   };
 
+  /**
+   * hardcoded ship placement 1
+   * @returns array with ship objects
+   */
   this.aiPlacedShips2 = function () {
     let shipsArr = [];
     let patrolBoat = new Ship(2, "Patrol Boat");
@@ -261,7 +285,7 @@ function Gameboard(owner) {
     ];
     shipsArr.push(cruiser1);
 
-    let cruiser2 = new Ship(3, "Cruiser1");
+    let cruiser2 = new Ship(3, "Cruiser2");
     cruiser2.coordinates = [
       [5, 7],
       [5, 8],
@@ -287,10 +311,14 @@ function Gameboard(owner) {
       [8, 9],
     ];
     shipsArr.push(carrier);
-    console.log(shipsArr);
+    // console.log(shipsArr);
     return shipsArr;
   };
 
+  /**
+   * hardcoded ship placement 1
+   * @returns array with ship objects
+   */
   this.aiPlacedShips3 = function () {
     let shipsArr = [];
     let patrolBoat = new Ship(2, "Patrol Boat");
@@ -308,7 +336,7 @@ function Gameboard(owner) {
     ];
     shipsArr.push(cruiser1);
 
-    let cruiser2 = new Ship(3, "Cruiser1");
+    let cruiser2 = new Ship(3, "Cruiser2");
     cruiser2.coordinates = [
       [0, 9],
       [1, 9],
@@ -334,7 +362,7 @@ function Gameboard(owner) {
       [9, 4],
     ];
     shipsArr.push(carrier);
-    console.log(shipsArr);
+    // console.log(shipsArr);
     return shipsArr;
   };
 

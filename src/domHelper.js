@@ -49,6 +49,30 @@ const crtTile = (parent, typeOfEle, nameId, nameClass) => {
 };
 
 /**
+ * create a grid tile with class for screenGameplay phase
+ * @param {string} parent select parent using css selector
+ * @param {string} typeOfEle type of dom element
+ * @param {string} nameId id name
+ * @param {string} nameClass class name
+ * @returns created dom element
+ */
+const crtTileGame = (parent, typeOfEle, nameId, nameClass) => {
+  // select parent
+  const parentEle = document.querySelector(parent);
+  // create element
+  const crtEle = document.createElement(typeOfEle);
+  // crtEle.setAttribute("class", nameId);
+  // crtEle.className = nameClass;
+  crtEle.classList.add(nameId);
+  crtEle.classList.add(nameClass);
+  //   crtEle.className = coorClass;
+
+  // append created element
+  parentEle.appendChild(crtEle);
+  return crtEle;
+};
+
+/**
  * extract x-y-coordinates from id-string of a tile
  * @param {string} string get a string containing the x-y-coordinates of a tile
  * @returns array [x,y]
@@ -255,4 +279,5 @@ export {
   removeEventsFromTiles,
   checkCollision,
   deletAllEvents,
+  crtTileGame,
 };
