@@ -141,11 +141,13 @@ function Gameboard(owner) {
       // shot missed
       // mark tile in dom with an x
       // push coordinates that missed into an array
-      this.shotsMissed.push(targetCoor);
+
+      //this.shotsMissed.push(targetCoor);
+
       return false;
     } else {
       // shot hit
-      this.shotsHit.push(targetCoor);
+      //this.shotsHit.push(targetCoor);
       // mark tile in dom
 
       targetHit.hit();

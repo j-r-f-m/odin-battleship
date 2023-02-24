@@ -1,5 +1,6 @@
 import { playerBoard, aiBoard } from ".";
 import { crtNode, crtTile, crtTileGame } from "./domHelper";
+import screenPlacing from "./screenPlacing";
 
 /**
  * create screen for gamepaly
@@ -20,6 +21,7 @@ const screenGameplay = () => {
 
   // create content container
   const contentContainer = crtNode("#body", "div", "content-gameplay");
+  contentContainer.setAttribute("id", "content-container");
   // create player interface
   const playerGrid = crtNode(
     ".content-gameplay",
@@ -91,10 +93,12 @@ function fireShot(e) {
   // extract coordinates from string
   let coorString = e.target.classList[0];
 
+  const allContentCon = document.getElementById("content-container");
+
   let winnerBtn = null;
+  let replayBtn = null;
 
   let coorArr = [parseInt(coorString[3]), parseInt(coorString[7])];
-  console.log(coorArr);
 
   // check if coordinate is occupied by a ship
   let hit = aiBoard.receiveAttack(coorArr);
@@ -108,13 +112,92 @@ function fireShot(e) {
   } else if (hit === "gameover player wins") {
     console.log("gameover player wins");
     e.target.style.backgroundColor = "red";
+    // create winner message
     winnerBtn = crtNode(".content-gameplay", "div", "btn-winner");
-    winnerBtn.textContent = "YOU WON";
-    console.log(winnerBtn);
+    winnerBtn.textContent = "YOU WIN";
+
+    replayBtn = crtNode(".content-gameplay", "button", "btn-replay");
+    replayBtn.textContent = "Replay";
+
+    replayBtn.addEventListener("click", () => {
+      // delete start screen
+      allContentCon.remove();
+      // create placing screen
+      screenPlacing();
+      playerBoard.resetGameboard();
+      aiBoard.availableShips.length = 0;
+      aiBoard.placedShips = aiBoard.aiShipPlacement(); //
+    });
+
+    deletAllEventsGameplayScreen();
   }
   // remove eventlistener
   e.target.removeEventListener("click", fireShot);
+
+  /** ------------------- ai attack------------------------- */
+  const aiAttackCoor = randomAiAttack();
+  // aiBoard.shotsMissed.push(aiAttackCoor);
+
+  // turn coordinates array into coordinate string class name
+  const coorStr = `x1:${aiAttackCoor[0]}y1:${aiAttackCoor[1]}`;
+
+  let hitAi = playerBoard.receiveAttack(aiAttackCoor);
+
+  let tileAttckPlayerGrid = document.getElementsByClassName(coorStr);
+
+  if (hitAi === true) {
+    tileAttckPlayerGrid[0].style.backgroundColor = "red";
+  } else if (hitAi === false) {
+    tileAttckPlayerGrid[0].style.backgroundColor = "blue";
+  } else if (hit === "gameover ai wins") {
+    tileAttckPlayerGrid[0].style.backgroundColor = "red";
+    winnerBtn = crtNode(".content-gameplay", "div", "btn-winner");
+    winnerBtn.textContent = "YOU LOOSE";
+
+    replayBtn = crtNode(".content-gameplay", "button", "btn-replay");
+    replayBtn.textContent = "Replay";
+
+    replayBtn.addEventListener("click", () => {
+      // delete start screen
+      allContentCon.remove();
+      // create placing screen
+      screenPlacing();
+      playerBoard.resetGameboard();
+      aiBoard.availableShips.length = 0;
+      aiBoard.placedShips = aiBoard.aiShipPlacement(); //
+    });
+
+    deletAllEventsGameplayScreen();
+  }
 }
+
+/**
+ * attack player at random coordinate
+ * @returns array with x-y-coordinate where the ai wants to attack
+ */
+const randomAiAttack = () => {
+  let randX = Math.floor(Math.random() * 10);
+  let randY = Math.floor(Math.random() * 10);
+
+  let coorArr = [randX, randY];
+
+  return coorArr;
+};
+
+/**
+ * check if all shipt are placed
+ * if all ships are placed remove all eventlisteners
+ * @param {int} lenghtSipArr length of availableShipsArray
+ */
+const deletAllEventsGameplayScreen = () => {
+  //
+
+  const parent = document.getElementsByClassName("grid-container-ai");
+
+  for (const child of parent[0].children) {
+    child.removeEventListener("click", fireShot);
+  }
+};
 
 /**
  *place ships of player in dom

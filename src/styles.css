@@ -395,7 +395,18 @@ table {
 }
 
 .btn-winner {
-  grid-column: 6 / 11;
+  grid-column: 3 / 7;
+  grid-row: 11 / 12;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: lightgray;
+}
+
+.btn-replay {
+  grid-column: 10 / 14;
   grid-row: 11 / 12;
 
   display: flex;
