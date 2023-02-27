@@ -1370,9 +1370,9 @@ const gameflow = {
 };
 
 // console.log(aiBoard.availableShips);
-//screenStart();
-(0,_screenPlacing__WEBPACK_IMPORTED_MODULE_2__["default"])();
-// screenGameplay();
+// screenStart();
+// screenPlacing();
+(0,_screenGameplay__WEBPACK_IMPORTED_MODULE_4__["default"])();
 
 // create ship objects for placement
 
@@ -2075,4 +2075,4 @@ function Ship(length, name) {
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=bundle220bee6db3808cb762f4.js.map
+//# sourceMappingURL=bundlef89567f5d4c7157256de.js.map
