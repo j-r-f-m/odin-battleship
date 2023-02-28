@@ -19,9 +19,9 @@ const gameflow = {
 };
 
 // console.log(aiBoard.availableShips);
-// screenStart();
-// screenPlacing();
-screenGameplay();
+screenStart();
+/* screenPlacing();
+screenGameplay(); */
 
 // create ship objects for placement
 

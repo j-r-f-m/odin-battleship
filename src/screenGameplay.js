@@ -22,18 +22,21 @@ const screenGameplay = () => {
   // create content container
   const contentContainer = crtNode("#body", "div", "content-gameplay");
   contentContainer.setAttribute("id", "content-container");
-  // create player interface
+  // create container for player interface
   const playerGrid = crtNode(
     ".content-gameplay",
     "div",
     "grid-container-player"
   );
 
+  // create name plate for palyer
   const playerNamePlate = crtNode(
     ".content-gameplay",
     "div",
     "player-name-plate"
   );
+
+  // create name plate for ai
   playerNamePlate.textContent = "Player";
   createTilesPlayer("player", 1);
   placeShipsDomPlayer();
@@ -50,6 +53,7 @@ const screenGameplay = () => {
  * create tiles for the grid of  the ai
  * pass owner und correesponfing number
  * @param {string} nameOwner name of owner of tiles -> player or tile
+ * @param {int} numOwner number corresponding to  tiles in dom
  */
 const createTilesPlayer = (nameOwner, numOwner) => {
   // create a 10x10 x-y-grid using two loops to calculate the coordinates for
@@ -221,8 +225,10 @@ const placeShipsDomPlayer = () => {
 
 /**
  * place ships of ai in dom
+ * only for testing purposes
+ * I do not want the palyer to see the ships
  */
-const placeShipsDomAi = () => {
+/* const placeShipsDomAi = () => {
   const placedShipsArr = aiBoard.placedShips;
   // console.log(placedShipsArr);
   for (let i = 0; i < placedShipsArr.length; i++) {
@@ -239,6 +245,6 @@ const placeShipsDomAi = () => {
       currTile[0].setAttribute("id", aiBoard.placedShips[i].name);
     }
   }
-};
+}; */
 
 export default screenGameplay;
